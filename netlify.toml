@@ -1,0 +1,19 @@
+# Netlify config for the IncoBev Asia Phase 1 preview build.
+# The site is pre-built locally (compiled Tailwind + assembled partials); we
+# deploy the ready-made dist/ folder, so no build command runs on Netlify.
+[build]
+  publish = "dist"
+  # Netlify runs this when deploying from the connected GitHub repo:
+  # assembles the partials into dist/ and compiles the purged Tailwind CSS.
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Assets use stable filenames (style.css, images) and are updated in place while
+# this preview is iterated, so they must NOT be cached immutably. Revalidate on
+# each request; Netlify's atomic deploys + ETags keep this cheap and always fresh.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

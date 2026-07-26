@@ -1,0 +1,18 @@
+{
+  "name": "incobev-asia-site",
+  "version": "1.0.0",
+  "description": "IncoBev Asia — Phase 1 static reference build (compiled Tailwind, shared partials).",
+  "private": true,
+  "scripts": {
+    "assemble": "node build.js",
+    "css": "tailwindcss -i ./src/css/input.css -o ./dist/assets/style.css --minify",
+    "css:watch": "tailwindcss -i ./src/css/input.css -o ./dist/assets/style.css --watch",
+    "build": "node build.js && npm run css",
+    "dev": "node build.js && tailwindcss -i ./src/css/input.css -o ./dist/assets/style.css --watch",
+    "serve": "node serve.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "tailwindcss": "^3.4.17"
+  }
+}

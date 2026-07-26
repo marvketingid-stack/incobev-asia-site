@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+{{> head}}
+</head>
+<body class="overflow-x-hidden bg-background text-on-surface">
+{{> header}}
+<main>
+
+  <!-- Hero -->
+  <section class="relative flex min-h-[520px] items-center overflow-hidden lg:min-h-[600px]">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/contact-hero.jpg" alt="Coffee being served" class="h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30"></div>
+    </div>
+    <div class="container-page relative z-10">
+      <div class="max-w-2xl">
+        <span class="mb-4 inline-block text-label-sm uppercase tracking-widest text-primary">Contact Us</span>
+        <h1 class="mb-8 text-display-lg leading-tight text-on-background">Let’s Build the <span class="text-primary">Next Wave</span> Together</h1>
+        <p class="mb-12 max-w-xl text-body-lg leading-relaxed text-on-surface-variant">
+          IncoBev Asia is your gateway to Southeast Asia’s beverage market. Whether you’re a brand principal, operator, or partner, our regional teams are ready to connect.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact-form" class="btn-primary px-8 py-4">Start a Conversation <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+          <a href="#channels" class="rounded-lg bg-surface-container-low px-8 py-4 font-bold text-primary transition-all hover:bg-surface-container-high">View Direct Channels</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channels + Form -->
+  <section class="section" id="channels">
+    <div class="container-page reveal">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <!-- Channels -->
+        <div class="space-y-12 lg:col-span-4">
+          <div>
+            <h2 class="mb-10 text-headline-lg">Direct Channels</h2>
+            <div class="space-y-6">
+              <div class="group flex items-start gap-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-primary/30">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-on-primary"><span class="material-symbols-outlined">mail</span></div>
+                <div><h4 class="mb-1 text-base font-bold">General Inquiries</h4><a href="mailto:hello@incobev.asia" class="font-body-md text-on-surface-variant hover:text-primary">hello@incobev.asia</a></div>
+              </div>
+              <div class="group flex items-start gap-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-primary/30">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-on-primary"><span class="material-symbols-outlined">location_on</span></div>
+                <div><h4 class="mb-1 text-base font-bold">Visit Us</h4><p class="text-on-surface-variant">402, North Bridge Road, #03-00<br>Singapore 177822</p></div>
+              </div>
+              <div class="group flex items-start gap-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-primary/30">
+                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-on-primary"><span class="material-symbols-outlined">language</span></div>
+                <div><h4 class="mb-1 text-base font-bold">Online</h4><a href="https://www.incobev.asia" class="font-body-md text-on-surface-variant hover:text-primary">www.incobev.asia</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-secondary/20 bg-secondary-container/20 p-8">
+            <h3 class="mb-4 text-headline-md text-secondary">Sustainability Commitment</h3>
+            <p class="text-body-md leading-relaxed text-on-surface-variant">Our regional teams prioritise eco-conscious solutions. Ask us about our Net-Zero 2030 roadmap and coffee-grounds recycling programme.</p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-8" id="contact-form">
+          <div class="rounded-3xl border border-outline-variant bg-surface-container-lowest p-8 shadow-sm md:p-12">
+            <div class="mb-10">
+              <h2 class="mb-4 text-headline-lg">Submit a Request</h2>
+              <p class="text-on-surface-variant">Fill out the form below and our regional leads will be in touch.</p>
+            </div>
+            <!-- Honest, non-faked form. data-configured="false" until a real endpoint is wired (see assets/js/contact.js). -->
+            <form id="contact-form-el" class="space-y-8" method="post" data-configured="false" data-endpoint="">
+              <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class="space-y-3">
+                  <label for="cf-name" class="text-label-sm font-semibold text-on-surface-variant">Full Name</label>
+                  <input id="cf-name" name="name" type="text" required placeholder="Enter your name" class="w-full rounded-lg border-none bg-surface-container-low p-4 transition-all focus:ring-2 focus:ring-primary">
+                </div>
+                <div class="space-y-3">
+                  <label for="cf-email" class="text-label-sm font-semibold text-on-surface-variant">Corporate Email</label>
+                  <input id="cf-email" name="email" type="email" required placeholder="example@company.com" class="w-full rounded-lg border-none bg-surface-container-low p-4 transition-all focus:ring-2 focus:ring-primary">
+                </div>
+              </div>
+              <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class="space-y-3">
+                  <label for="cf-type" class="text-label-sm font-semibold text-on-surface-variant">Inquiry Type</label>
+                  <select id="cf-type" name="inquiry_type" class="w-full rounded-lg border-none bg-surface-container-low p-4 transition-all focus:ring-2 focus:ring-primary">
+                    <option>Partnership Opportunities</option>
+                    <option>Equipment &amp; Consumables</option>
+                    <option>Technical Services</option>
+                    <option>Manufacturing &amp; OEM</option>
+                    <option>Sustainability</option>
+                  </select>
+                </div>
+                <div class="space-y-3">
+                  <label for="cf-hub" class="text-label-sm font-semibold text-on-surface-variant">Regional Hub</label>
+                  <select id="cf-hub" name="hub" class="w-full rounded-lg border-none bg-surface-container-low p-4 transition-all focus:ring-2 focus:ring-primary">
+                    <option>Singapore (HQ)</option>
+                    <option>Kuala Lumpur</option>
+                    <option>Penang</option>
+                    <option>Bangkok</option>
+                    <option>Jakarta</option>
+                    <option>Bali</option>
+                  </select>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <label for="cf-message" class="text-label-sm font-semibold text-on-surface-variant">Message</label>
+                <textarea id="cf-message" name="message" rows="4" required placeholder="How can we help your business?" class="w-full rounded-lg border-none bg-surface-container-low p-4 transition-all focus:ring-2 focus:ring-primary"></textarea>
+              </div>
+              <button type="submit" class="flex w-full items-center justify-center gap-3 rounded-xl bg-primary-container py-5 text-lg font-bold text-on-primary transition-all hover:shadow-lg hover:shadow-primary/20">
+                Send Message <span class="material-symbols-outlined">send</span>
+              </button>
+              <div id="form-status" role="status" aria-live="polite" hidden></div>
+              <p class="text-center text-label-sm text-outline">By submitting, you agree to our <a href="#" class="underline">Privacy Policy</a> regarding data handling.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Presence -->
+  <section class="section bg-surface-container-lowest">
+    <div class="container-page reveal">
+      <div class="mb-16 text-center">
+        <h2 class="mb-6 text-headline-lg">Regional Presence</h2>
+        <p class="mx-auto max-w-2xl text-on-surface-variant">Connecting brand principals with market expertise across Singapore, Malaysia, Thailand and Indonesia.</p>
+      </div>
+      <div class="mb-12 h-[320px] overflow-hidden rounded-3xl border border-outline-variant bg-[#eef3fa] shadow-inner md:h-[420px] lg:h-[480px]">
+        <img src="assets/images/sea-map.svg" alt="IncoBev Asia regional presence across Singapore, Malaysia, Thailand and Indonesia" class="h-full w-full object-contain">
+      </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-r-lg border-l-4 border-primary bg-surface-container-low p-8"><h4 class="mb-3 font-bold text-primary">Singapore — HQ</h4><p class="text-sm text-on-surface-variant">402, North Bridge Road, #03-00, Singapore 177822</p></div>
+        <div class="rounded-r-lg border-l-4 border-outline-variant p-8"><h4 class="mb-3 font-bold text-on-surface">Malaysia</h4><p class="text-sm text-on-surface-variant">Kuala Lumpur &amp; Penang — Sales &amp; Technical Office</p></div>
+        <div class="rounded-r-lg border-l-4 border-outline-variant p-8"><h4 class="mb-3 font-bold text-on-surface">Thailand</h4><p class="text-sm text-on-surface-variant">Bangkok — HORECA Division</p></div>
+        <div class="rounded-r-lg border-l-4 border-outline-variant p-8"><h4 class="mb-3 font-bold text-on-surface">Indonesia</h4><p class="text-sm text-on-surface-variant">Jakarta &amp; Bali — Appointed Distributors</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section relative overflow-hidden bg-primary-container text-on-primary">
+    <div class="container-page relative z-10 text-center">
+      <h2 class="mb-8 text-headline-xl text-on-primary">Ready to elevate your beverage experience?</h2>
+      <p class="mx-auto mb-12 max-w-2xl text-lg text-primary-fixed">Join the ecosystem redefining Asia’s beverage experience — one brand, one experience, one moment at a time.</p>
+      <div class="flex flex-col justify-center gap-6 sm:flex-row">
+        <a href="#contact-form" class="rounded-xl bg-on-primary px-10 py-5 font-bold text-primary transition-transform hover:scale-105">Partner With Us</a>
+        <a href="our-brands.html" class="rounded-xl border-2 border-on-primary px-10 py-5 font-bold text-on-primary transition-colors hover:bg-on-primary/10">Explore Our Brands</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{> footer}}
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* IncoBev Asia — compiled Tailwind entry (replaces the CDN JIT script). */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-on-surface font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layout primitives (Spec Section 7 — supersedes source's mixed values)
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Container: max 1280px, gutters 16 / 32 / 64 (mobile / tablet / desktop) */
+  .container-page {
+    @apply mx-auto w-full max-w-container-max px-margin-mobile md:px-margin-tablet lg:px-margin-desktop;
+  }
+
+  /* Section vertical padding: 64 / 80 / 120 (mobile / tablet / desktop) */
+  .section {
+    @apply py-16 md:py-20 lg:py-[120px];
+  }
+
+  /* Grid gutter: 16–20 / 24 / 32 (mobile / tablet / desktop) */
+  .grid-gutter {
+    @apply gap-5 md:gap-6 lg:gap-8;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-on-primary transition-all hover:bg-primary-container;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary px-6 py-3 font-bold text-primary transition-colors hover:bg-primary/5;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-2xl border border-outline-variant bg-surface-container-lowest transition-all;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive type scale (Spec Section 7 — 3-step: desktop / tablet / mobile)
+   Tailwind's fontSize utilities carry the DESKTOP size + line-height/weight;
+   these blocks step the font-size down for tablet and mobile.
+   (mobile block is last so it wins at widths matched by both queries)
+--------------------------------------------------------------------------- */
+/* Tablet: 768–1023px */
+@media (max-width: 1023px) {
+  .text-display-lg { font-size: 40px; }
+  .text-headline-xl { font-size: 32px; }
+  .text-headline-lg { font-size: 28px; }
+  /* headline-md, body-lg, body-md, label-sm unchanged at tablet */
+}
+/* Mobile: <768px */
+@media (max-width: 767px) {
+  .text-display-lg { font-size: 32px; }
+  .text-headline-xl { font-size: 28px; }
+  .text-headline-lg { font-size: 24px; }
+  .text-headline-md { font-size: 20px; }
+  .text-body-lg { font-size: 16px; }
+  /* body-md floor 16px, label-sm floor 14px — unchanged */
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, #003861, #506075);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Scroll-reveal (progressive enhancement; content is visible without JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Mobile nav drawer */
+.mobile-drawer {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+body.nav-open {
+  overflow: hidden;
+}

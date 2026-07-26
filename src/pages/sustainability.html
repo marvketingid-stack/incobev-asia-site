@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+{{> head}}
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+{{> header}}
+<main>
+
+  <!-- Hero -->
+  <section class="relative flex min-h-[600px] items-center overflow-hidden lg:min-h-[720px]">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/sustainability-hero.jpg" alt="Sustainable coffee sourcing landscape" class="h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/50 to-transparent"></div>
+    </div>
+    <div class="container-page relative z-10">
+      <div class="max-w-2xl">
+        <span class="mb-6 inline-block rounded-full bg-secondary-container px-4 py-1.5 text-label-sm uppercase tracking-wider text-on-secondary-container">Our Sustainability Approach</span>
+        <h1 class="mb-6 text-display-lg leading-tight text-on-surface">Building a <span class="text-secondary italic">Sustainable</span> Future Together</h1>
+        <p class="mb-10 max-w-xl text-body-lg text-on-surface-variant">
+          Our commitment to environmental responsibility runs across the entire supply chain — guided by five interconnected pillars and a clear path to net-zero by 2030.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#pillars" class="btn-primary bg-secondary px-8 py-4 text-on-secondary hover:bg-secondary/90">Explore Our Pillars <span class="material-symbols-outlined">arrow_forward</span></a>
+          <a href="#roadmap" class="btn-outline px-8 py-4">Net-Zero Roadmap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 5 Pillars -->
+  <section class="section" id="pillars">
+    <div class="container-page reveal">
+      <div class="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
+        <div class="max-w-xl">
+          <h2 class="mb-4 text-headline-xl text-on-surface">The 5 Pillars</h2>
+          <p class="text-body-md text-on-surface-variant">A multi-faceted approach to regional impact — from how we source and operate to the communities and customers we serve.</p>
+        </div>
+        <div class="mb-4 hidden h-px flex-grow bg-outline-variant md:block"></div>
+      </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
+        <!-- Responsible Sourcing -->
+        <div class="group relative flex h-[400px] flex-col justify-end overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low p-8 transition-all hover:shadow-xl md:col-span-8 md:p-10">
+          <div class="absolute left-8 top-8 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">eco</span></div>
+          <div class="pointer-events-none absolute bottom-0 right-0 h-full w-2/3 opacity-25 transition-opacity group-hover:opacity-40"
+               style="mask-image:linear-gradient(to left,#000 30%,transparent);-webkit-mask-image:linear-gradient(to left,#000 30%,transparent)">
+            <img src="assets/images/coffeeshop.jpg" alt="" class="h-full w-full object-cover">
+          </div>
+          <div class="relative z-10">
+            <h3 class="mb-4 text-headline-lg">1 · Responsible Sourcing</h3>
+            <p class="mb-6 max-w-md text-body-md text-on-surface-variant">Building direct relationships with coffee producers and cooperatives for fair prices, quality, and sustainable farming — including Rainforest Alliance certified sourcing and purpose-aligned traders.</p>
+          </div>
+        </div>
+        <!-- Responsible Operations -->
+        <div class="group flex flex-col justify-between rounded-xl bg-primary p-8 text-on-primary transition-all hover:bg-primary-container md:col-span-4 md:p-10">
+          <span class="mb-8 text-4xl material-symbols-outlined">factory</span>
+          <div>
+            <h3 class="mb-3 text-headline-md">2 · Responsible Operations</h3>
+            <p class="mb-6 text-body-md text-on-primary/80">Efficient, FSSC 22000-certified manufacturing, renewable solar energy, and a culture of operational excellence.</p>
+            <span class="inline-block rounded bg-white/10 px-3 py-1 text-label-sm">Solar-powered roasting</span>
+          </div>
+        </div>
+        <!-- Circular Resource Management -->
+        <div class="group rounded-xl border border-outline-variant p-8 transition-all hover:border-secondary md:col-span-4 md:p-10">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-container text-secondary transition-colors group-hover:bg-secondary group-hover:text-on-secondary"><span class="material-symbols-outlined">recycling</span></div>
+          <h3 class="mb-3 text-headline-md">3 · Circular Resource Management</h3>
+          <p class="text-body-md text-on-surface-variant">Recyclable packaging, machine refurbishment, coffee-grounds upcycling, and right-sized packaging to cut material waste.</p>
+        </div>
+        <!-- People & Communities -->
+        <div class="group rounded-xl border border-outline-variant p-8 transition-all hover:border-secondary md:col-span-4 md:p-10">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-container text-secondary transition-colors group-hover:bg-secondary group-hover:text-on-secondary"><span class="material-symbols-outlined">groups</span></div>
+          <h3 class="mb-3 text-headline-md">4 · People &amp; Communities</h3>
+          <p class="text-body-md text-on-surface-variant">Guided by the SuzukiCARES framework — community outreach, associate growth, regional suppliers, and engaging consumers.</p>
+        </div>
+        <!-- Shared Value Creation -->
+        <div class="group flex flex-col justify-between rounded-xl bg-surface-container-highest p-8 transition-all hover:shadow-xl md:col-span-4 md:p-10">
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/15 text-secondary"><span class="material-symbols-outlined">handshake</span></div>
+          <div>
+            <h3 class="mb-3 text-headline-md">5 · Shared Value Creation</h3>
+            <p class="text-body-md text-on-surface-variant">Helping customers reduce Scope 1, 2 &amp; 3 emissions through energy-efficient machines, green delivery, coffee recycling, and trade-in programmes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Metrics -->
+  <section class="section bg-inverse-surface">
+    <div class="container-page reveal">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-headline-xl text-surface-bright">Real Impact, Real Numbers</h2>
+        <p class="mx-auto max-w-2xl text-body-lg text-surface-variant">Our progress across environment, people, and community — 2025 figures.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col items-center border-white/10 p-8 text-center lg:border-r last:lg:border-0">
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">Bronze</div>
+          <div class="mb-2 text-headline-md text-surface-bright">EcoVadis Rating</div>
+          <p class="text-body-md text-surface-variant">Sarika Manufacturing Singapore — top 35% globally.</p>
+        </div>
+        <div class="flex flex-col items-center border-white/10 p-8 text-center lg:border-r last:lg:border-0">
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">1,000</div>
+          <div class="mb-2 text-headline-md text-surface-bright">Trees Target</div>
+          <p class="text-body-md text-surface-variant">Reforestation in Colombia &amp; Ethiopia by 2026.</p>
+        </div>
+        <div class="flex flex-col items-center border-white/10 p-8 text-center lg:border-r last:lg:border-0">
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">3,050</div>
+          <div class="mb-2 text-headline-md text-surface-bright">Consumers Engaged</div>
+          <p class="text-body-md text-surface-variant">Through events and sustainability workshops.</p>
+        </div>
+        <div class="flex flex-col items-center p-8 text-center">
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">753.5</div>
+          <div class="mb-2 text-headline-md text-surface-bright">Training Hours</div>
+          <p class="text-body-md text-surface-variant">Invested in our people and partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Net-Zero Roadmap -->
+  <section class="section" id="roadmap">
+    <div class="container-page reveal">
+      <h2 class="mb-16 text-center text-headline-xl text-on-surface">Our Net-Zero 2030 Roadmap</h2>
+      <div class="relative">
+        <!-- desktop: horizontal track -->
+        <div class="absolute left-0 top-[32px] z-0 hidden h-1 w-full bg-outline-variant md:block"></div>
+        <!-- mobile: vertical track through the icons -->
+        <div class="absolute bottom-6 left-6 top-6 z-0 w-0.5 bg-outline-variant md:hidden"></div>
+        <div class="grid gap-8 md:grid-cols-4 md:gap-8">
+          <div class="relative flex gap-5 md:block">
+            <div class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-on-primary ring-4 ring-background md:mb-6 md:h-16 md:w-16 md:ring-8"><span class="material-symbols-outlined">check_circle</span></div>
+            <div class="min-w-0 pt-1 md:pt-0">
+              <h4 class="text-headline-md text-primary">2024 – 2025</h4>
+              <p class="mb-4 mt-1 text-label-sm font-bold uppercase text-primary">Baseline &amp; Measure</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Scope 2 baseline established</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Coffee grounds upcycling launched</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> ISO 22000 &amp; FSSC 22000 achieved</li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative flex gap-5 md:block">
+            <div class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-primary bg-background text-primary ring-4 ring-background md:mb-6 md:h-16 md:w-16 md:ring-8"><span class="material-symbols-outlined">bolt</span></div>
+            <div class="min-w-0 pt-1 md:pt-0">
+              <h4 class="text-headline-md text-on-surface">2026 – 2027</h4>
+              <p class="mb-4 mt-1 text-label-sm font-bold uppercase text-secondary">Infrastructure Investment</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Scope 1, 2 &amp; 3 measurement</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Sustainable packaging pilot</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> 50% Rainforest Alliance sourcing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative flex gap-5 md:block">
+            <div class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-outline bg-background text-outline ring-4 ring-background md:mb-6 md:h-16 md:w-16 md:ring-8"><span class="material-symbols-outlined">all_inclusive</span></div>
+            <div class="min-w-0 pt-1 md:pt-0">
+              <h4 class="text-headline-md text-on-surface">2028 – 2029</h4>
+              <p class="mb-4 mt-1 text-label-sm font-bold uppercase text-outline">Deep Decarbonisation</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> 30%+ Scope 1 &amp; 2 reduction</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Fleet EV transition</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Supplier engagement programme</li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative flex gap-5 md:block">
+            <div class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-outline bg-background text-outline ring-4 ring-background md:mb-6 md:h-16 md:w-16 md:ring-8"><span class="material-symbols-outlined">flag</span></div>
+            <div class="min-w-0 pt-1 md:pt-0">
+              <h4 class="text-headline-md text-on-surface">2030</h4>
+              <p class="mb-4 mt-1 text-label-sm font-bold uppercase text-outline">Net-Zero Achievement</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> 50%+ Scope 1 &amp; 2 reduction</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> 100% residual emissions offset</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> 50% less packaging to landfill</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section bg-surface-container-low">
+    <div class="container-page reveal">
+      <div class="flex flex-col gap-12 lg:flex-row lg:items-stretch">
+        <div class="w-full lg:w-1/2">
+          <h2 class="mb-6 text-headline-xl text-on-surface">Certified Excellence</h2>
+          <p class="mb-10 text-body-lg text-on-surface-variant">Our commitment is validated by recognised standards for food safety, environmental management, workplace safety, and social responsibility.</p>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">verified_user</span><span class="text-label-sm font-bold">ISO 22000 &amp; FSSC 22000</span></div>
+            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">eco</span><span class="text-label-sm font-bold">ISO 14001 Environmental</span></div>
+            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">health_and_safety</span><span class="text-label-sm font-bold">bizSAFE Level 3</span></div>
+            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">forest</span><span class="text-label-sm font-bold">Rainforest Alliance</span></div>
+          </div>
+          <div class="mt-8 flex flex-wrap items-center gap-6 rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
+            <img src="assets/certs/iso-14001.png" alt="ISO 14001" class="h-14 w-auto object-contain">
+            <img src="assets/certs/bizsafe.jpg" alt="bizSAFE Level 3" class="h-12 w-auto object-contain">
+            <img src="assets/certs/ecovadis.png" alt="EcoVadis" class="h-14 w-auto object-contain">
+            <img src="assets/certs/champion-of-good.png" alt="Champion of Good" class="h-14 w-auto object-contain">
+            <img src="assets/certs/halal.png" alt="Halal Certified" class="h-14 w-auto object-contain">
+          </div>
+        </div>
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl lg:aspect-auto lg:w-1/2">
+          <img src="assets/images/sustainability-portrait.jpg" alt="Rainforest Alliance certified coffee from Robert Timms and Suzuki Coffee in a forest setting" class="h-full w-full object-cover lg:absolute lg:inset-0">
+          <div class="absolute inset-0 mix-blend-multiply bg-primary/10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{> footer}}
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

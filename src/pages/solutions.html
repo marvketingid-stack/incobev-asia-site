@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+{{> head}}
+</head>
+<body class="overflow-x-hidden bg-background text-on-surface">
+{{> header}}
+<main>
+
+  <!-- Hero -->
+  <section class="relative flex min-h-[600px] items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/solutions-hero.jpg" alt="Beverage service in a foodservice environment" class="h-full w-full object-cover opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+    </div>
+    <div class="container-page relative z-10 py-20">
+      <div class="max-w-2xl">
+        <span class="mb-6 inline-block rounded-full bg-secondary-container px-4 py-1.5 text-label-sm uppercase tracking-widest text-on-secondary-container">Integrated Solutions</span>
+        <h1 class="mb-8 text-display-lg leading-tight text-on-surface">Integrated <br><span class="text-primary">Beverage Solutions</span></h1>
+        <p class="mb-10 max-w-xl text-body-lg text-on-surface-variant">
+          We combine equipment, consumables, manufacturing, technical expertise, and customer success — supporting businesses across hospitality, foodservice, workplace, retail, and institutional sectors.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#capabilities" class="btn-primary px-8 py-4 hover:scale-105">Explore Capabilities <span class="material-symbols-outlined">arrow_forward</span></a>
+          <a href="contact-us.html" class="btn-outline px-8 py-4">Talk to Our Team</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 opacity-50 sm:flex">
+      <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Scroll</span>
+      <div class="h-12 w-px bg-gradient-to-b from-primary to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Key Customer Segments (Bento) -->
+  <section class="section bg-surface">
+    <div class="container-page reveal">
+      <div class="mb-12 flex flex-col items-end justify-between gap-8 md:flex-row">
+        <div class="max-w-xl">
+          <h2 class="mb-4 text-headline-xl text-on-surface">Solutions for Every Environment</h2>
+          <p class="text-body-md text-on-surface-variant">IncoBev Asia supports businesses across a wide range of commercial beverage environments — from luxury hospitality to workplace and retail.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
+        <!-- Hospitality large -->
+        <div class="group relative min-h-[400px] overflow-hidden rounded-xl border border-outline-variant bg-white md:col-span-8">
+          <img src="assets/images/hospitality.jpg" alt="Hotel and resort beverage service" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 text-white md:p-10">
+            <h3 class="mb-3 text-headline-md">Hotels &amp; Resorts</h3>
+            <p class="mb-6 max-w-md text-body-md opacity-90">Premium in-room and lobby beverage programmes for luxury hospitality across the region.</p>
+            <a href="contact-us.html" class="inline-flex items-center gap-2 text-label-sm hover:underline">Discuss Your Property <span class="material-symbols-outlined">north_east</span></a>
+          </div>
+          <div class="absolute right-6 top-6"><span class="rounded-full bg-secondary-container/90 px-4 py-1 text-label-sm text-on-secondary-container backdrop-blur">Hospitality</span></div>
+        </div>
+        <!-- Restaurants square -->
+        <div class="group flex flex-col justify-between rounded-xl border border-outline-variant bg-surface-container-low p-8 transition-all hover:shadow-xl md:col-span-4 md:p-10">
+          <div>
+            <div class="mb-8 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">restaurant</span></div>
+            <h3 class="mb-4 text-headline-md text-on-surface">Restaurants &amp; Café Chains</h3>
+            <p class="text-body-md text-on-surface-variant">Consistent, high-quality beverage systems for foodservice operators and café chains.</p>
+          </div>
+          <div class="mt-8 flex items-center justify-between border-t border-outline-variant pt-8">
+            <span class="text-label-sm text-primary">Foodservice</span>
+            <span class="material-symbols-outlined text-primary transition-transform group-hover:translate-x-2">arrow_forward</span>
+          </div>
+        </div>
+        <!-- Corporate square -->
+        <div class="group flex flex-col justify-between rounded-xl border border-outline-variant bg-white p-8 transition-all hover:shadow-xl md:col-span-4 md:p-10">
+          <div>
+            <div class="mb-8 flex h-12 w-12 items-center justify-center rounded-lg bg-tertiary/10 text-tertiary"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">corporate_fare</span></div>
+            <h3 class="mb-4 text-headline-md text-on-surface">Corporate Offices</h3>
+            <p class="text-body-md text-on-surface-variant">Workplace coffee solutions that keep teams fuelled — with reliable service and support.</p>
+          </div>
+          <div class="mt-8 flex items-center justify-between border-t border-outline-variant pt-8">
+            <span class="text-label-sm text-primary">Workplace</span>
+            <span class="material-symbols-outlined text-primary transition-transform group-hover:translate-x-2">arrow_forward</span>
+          </div>
+        </div>
+        <!-- Retail & OEM medium -->
+        <div class="group relative min-h-[300px] overflow-hidden rounded-xl border border-outline-variant bg-inverse-surface md:col-span-8">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-tertiary/20 opacity-40"></div>
+          <div class="relative flex h-full flex-col items-center gap-10 p-8 md:flex-row md:p-10">
+            <div class="flex-1">
+              <h3 class="mb-4 text-headline-md text-white">Retail, Convenience &amp; OEM</h3>
+              <p class="mb-8 text-body-md text-surface-variant">Solutions for airlines &amp; lounges, retail &amp; convenience, and OEM &amp; private-label partners — scalable and reliable.</p>
+              <div class="flex flex-wrap gap-6">
+                <div class="flex items-center gap-2 text-secondary-fixed"><span class="material-symbols-outlined">flight</span><span class="text-label-sm">Airlines &amp; Lounges</span></div>
+                <div class="flex items-center gap-2 text-secondary-fixed"><span class="material-symbols-outlined">inventory_2</span><span class="text-label-sm">OEM &amp; Private Label</span></div>
+              </div>
+            </div>
+            <div class="hidden h-40 w-40 rounded-full border border-white/10 bg-surface/5 p-4 md:block lg:h-48 lg:w-48">
+              <img src="assets/images/group-product.jpg" alt="Beverage product range" class="h-full w-full rounded-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Capabilities -->
+  <section class="section relative overflow-hidden bg-surface-container-low" id="capabilities">
+    <div class="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-1/2 bg-gradient-to-bl from-primary/5 to-transparent"></div>
+    <div class="container-page relative z-10 reveal">
+      <div class="mx-auto mb-16 max-w-3xl text-center">
+        <span class="mb-4 block text-label-sm uppercase tracking-widest text-primary">End-to-End Excellence</span>
+        <h2 class="mb-6 text-headline-xl text-on-surface">Our Core Capabilities</h2>
+        <p class="text-body-lg text-on-surface-variant">From technical excellence to market presence — the depth that leading equipment manufacturers choose us for.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="group relative pt-10">
+          <div class="absolute left-0 top-0 select-none text-display-lg font-bold text-surface-dim/40 transition-colors group-hover:text-primary/10">01</div>
+          <div class="card relative z-10 p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl md:p-10">
+            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-primary text-on-primary shadow-inner"><span class="material-symbols-outlined text-4xl">precision_manufacturing</span></div>
+            <h4 class="mb-4 text-headline-md text-on-surface">Technical Services</h4>
+            <p class="mb-8 text-body-md text-on-surface-variant">8 technical centres and 6 showrooms across 4 countries, keeping equipment performing at its peak.</p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Remote diagnostics &amp; repairs</li>
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Preventive maintenance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative pt-10">
+          <div class="absolute left-0 top-0 select-none text-display-lg font-bold text-surface-dim/40 transition-colors group-hover:text-primary/10">02</div>
+          <div class="card relative z-10 p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl md:p-10">
+            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-tertiary text-on-tertiary shadow-inner"><span class="material-symbols-outlined text-4xl">school</span></div>
+            <h4 class="mb-4 text-headline-md text-on-surface">Beverage Expertise &amp; Training</h4>
+            <p class="mb-8 text-body-md text-on-surface-variant">Certified Q-Graders and SCA-certified professionals delivering training for technicians, baristas and sales.</p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Beverage calibration</li>
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Workflow optimisation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="group relative pt-10">
+          <div class="absolute left-0 top-0 select-none text-display-lg font-bold text-surface-dim/40 transition-colors group-hover:text-primary/10">03</div>
+          <div class="card relative z-10 p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-2xl md:p-10">
+            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-secondary text-on-secondary shadow-inner"><span class="material-symbols-outlined text-4xl">inventory_2</span></div>
+            <h4 class="mb-4 text-headline-md text-on-surface">Supply Chain &amp; Customer Success</h4>
+            <p class="mb-8 text-body-md text-on-surface-variant">Centralised procurement, inventory and logistics from Singapore HQ — with integrated spare-parts planning.</p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Integrated spare-parts planning</li>
+              <li class="flex items-center gap-3 text-body-md text-on-surface"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span> Pre-sales &amp; account management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container-page reveal">
+      <div class="relative flex flex-col items-center justify-between gap-10 overflow-hidden rounded-[2rem] bg-primary p-10 md:flex-row md:p-16 lg:p-20">
+        <div class="absolute inset-0 opacity-10"><div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div></div>
+        <div class="relative z-10 max-w-xl text-center md:text-left">
+          <h2 class="mb-6 text-headline-xl text-on-primary">Ready to elevate your beverage programme?</h2>
+          <p class="text-body-lg text-on-primary-container">Partner with IncoBev Asia and build a beverage experience that sets your business apart across Southeast Asia.</p>
+        </div>
+        <div class="relative z-10 flex flex-col gap-4 sm:flex-row">
+          <a href="contact-us.html" class="whitespace-nowrap rounded-xl bg-surface-bright px-10 py-4 text-label-sm font-bold text-primary shadow-lg transition-colors hover:bg-secondary-fixed">Request a Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{> footer}}
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
