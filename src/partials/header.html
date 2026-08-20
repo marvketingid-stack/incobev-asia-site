@@ -1,57 +1,42 @@
-<!-- Shared header / sticky nav (single source — assembled into every page) -->
-<header id="site-header" class="sticky top-0 z-50 border-b border-outline-variant bg-surface/80 shadow-sm backdrop-blur-md transition-all duration-300">
+<!-- Shared header / sticky nav (single source — assembled into every page).
+     Pattern (per client comments, ref: wmf-coffeemachines.com): centered logo,
+     no inline category links, hamburger opens a dark full-screen nav overlay. -->
+<header id="site-header" class="sticky top-0 z-50 border-b border-outline-variant bg-surface/90 shadow-sm backdrop-blur-md transition-all duration-300">
   <div class="container-page flex h-20 items-center justify-between transition-all duration-300" id="nav-bar">
-    <!-- Logo -->
+    <!-- left spacer keeps the logo optically centered opposite the hamburger -->
+    <div class="h-11 w-11 shrink-0"></div>
+    <!-- Centered logo -->
     <a href="index.html" class="flex items-center" aria-label="IncoBev Asia — home">
       <img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" width="292" height="70" class="h-8 w-auto sm:h-9">
     </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
-      <a href="index.html" class="{{NAV_home}}">Home</a>
-      <a href="about-us.html" class="{{NAV_about}}">About Us</a>
-      <a href="our-brands.html" class="{{NAV_brands}}">Our Brands</a>
-      <a href="solutions.html" class="{{NAV_solutions}}">Solutions</a>
-      <a href="sustainability.html" class="{{NAV_sustainability}}">Sustainability</a>
-      <a href="contact-us.html" class="{{NAV_contact}}">Contact</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a href="contact-us.html" class="hidden rounded-lg bg-primary px-6 py-2.5 text-label-sm font-bold text-on-primary transition-all hover:bg-primary-container sm:inline-flex">
-        Partner With Us
-      </a>
-      <!-- Hamburger -->
-      <button id="nav-toggle" type="button"
-        class="flex h-11 w-11 items-center justify-center rounded-lg text-primary transition-colors hover:bg-primary/5 lg:hidden"
-        aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
-        <span class="material-symbols-outlined text-[28px]">menu</span>
-      </button>
-    </div>
+    <!-- Hamburger -->
+    <button id="nav-toggle" type="button"
+      class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-primary transition-colors hover:bg-primary/5"
+      aria-label="Open menu" aria-controls="nav-panel" aria-expanded="false">
+      <span class="material-symbols-outlined text-[28px]">menu</span>
+    </button>
   </div>
 </header>
 
-<!-- Mobile drawer + overlay -->
-<div id="nav-overlay" class="fixed inset-0 z-[60] hidden bg-on-background/50 lg:hidden" aria-hidden="true"></div>
-<aside id="mobile-drawer"
-  class="mobile-drawer fixed right-0 top-0 z-[70] flex h-full w-[85%] max-w-sm flex-col bg-surface-container-lowest shadow-2xl lg:hidden"
-  role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <div class="flex h-20 items-center justify-between border-b border-outline-variant px-6">
-    <span class="text-headline-md font-bold text-primary">Menu</span>
-    <button id="nav-close" type="button" class="flex h-11 w-11 items-center justify-center rounded-lg text-primary hover:bg-primary/5" aria-label="Close menu">
+<!-- Full-screen dark navigation overlay -->
+<div id="nav-panel" class="fixed inset-0 z-[70] hidden flex-col bg-inverse-surface text-surface-bright">
+  <div class="container-page flex h-20 shrink-0 items-center justify-between border-b border-white/10">
+    <div class="h-11 w-11"></div>
+    <a href="index.html" class="flex items-center" aria-label="IncoBev Asia — home">
+      <img src="assets/logos/incobev-logo-white.png" alt="IncoBev Asia" width="292" height="70" class="h-8 w-auto sm:h-9">
+    </a>
+    <button id="nav-close" type="button"
+      class="flex h-11 w-11 items-center justify-center rounded-lg text-surface-bright transition-colors hover:bg-white/10"
+      aria-label="Close menu">
       <span class="material-symbols-outlined text-[28px]">close</span>
     </button>
   </div>
-  <nav class="flex flex-col gap-1 p-6" aria-label="Mobile">
-    <a href="index.html" class="{{MNAV_home}}">Home</a>
-    <a href="about-us.html" class="{{MNAV_about}}">About Us</a>
-    <a href="our-brands.html" class="{{MNAV_brands}}">Our Brands</a>
-    <a href="solutions.html" class="{{MNAV_solutions}}">Solutions</a>
-    <a href="sustainability.html" class="{{MNAV_sustainability}}">Sustainability</a>
-    <a href="contact-us.html" class="{{MNAV_contact}}">Contact</a>
+  <nav class="container-page flex flex-1 flex-col justify-center gap-1 overflow-y-auto py-8" aria-label="Primary">
+    <a href="index.html" class="{{PNAV_home}}"><span>Home</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
+    <a href="about-us.html" class="{{PNAV_about}}"><span>About Us</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
+    <a href="our-brands.html" class="{{PNAV_brands}}"><span>Our Brands</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
+    <a href="solutions.html" class="{{PNAV_solutions}}"><span>Solutions</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
+    <a href="sustainability.html" class="{{PNAV_sustainability}}"><span>Sustainability</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
+    <a href="contact-us.html" class="{{PNAV_contact}}"><span>Contact</span><span class="material-symbols-outlined text-[28px] opacity-40 transition group-hover:translate-x-1 group-hover:opacity-100">arrow_forward</span></a>
   </nav>
-  <div class="mt-auto p-6">
-    <a href="contact-us.html" class="flex w-full items-center justify-center rounded-lg bg-primary px-6 py-4 font-bold text-on-primary transition-all hover:bg-primary-container">
-      Partner With Us
-    </a>
-  </div>
-</aside>
+</div>

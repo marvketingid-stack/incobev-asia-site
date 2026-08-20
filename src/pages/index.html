@@ -8,6 +8,9 @@
 <main>
 
   <!-- Hero -->
+  <!-- TODO: awaiting hero background VIDEO from client (auto-loop; concept: rotating globe + flag/market name).
+       No video file provided yet (see comment #1). Using a static image until the asset arrives; swap the
+       <img> below for a <video autoplay muted loop playsinline poster="..."> once received. -->
   <section class="relative flex min-h-[640px] items-center overflow-hidden lg:min-h-[760px]">
     <div class="absolute inset-0 z-0">
       <img src="assets/images/hero-home.jpg" alt="Barista pouring latte art" class="h-full w-full object-cover">
@@ -42,18 +45,31 @@
             <h2 class="text-headline-xl text-on-background">Strategic Regional Presence</h2>
             <p class="text-body-lg text-on-surface-variant">Today IncoBev Asia operates across Singapore, Malaysia, Thailand, and Indonesia through its portfolio of operating companies — delivering integrated beverage solutions close to where our partners work.</p>
           </div>
-          <div class="space-y-4">
-            <div class="group flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">hub</span></div>
-              <div><h3 class="font-bold text-on-surface">Singapore — Headquarters</h3><p class="text-sm text-on-surface-variant">HQ &amp; Sales Office · Technical, Logistics, Supply Chain &amp; Regional Sales</p></div>
+          <!-- TODO: awaiting country flag icon set from client (see comment #2 in ConsolidatedComments_IBAsia.md). Using neutral icons until then. -->
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">hub</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Singapore</h3><p class="text-xs text-on-surface-variant">HQ &amp; Sales Office</p></div>
             </div>
-            <div class="group flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">store</span></div>
-              <div><h3 class="font-bold text-on-surface">Malaysia — Kuala Lumpur &amp; Penang</h3><p class="text-sm text-on-surface-variant">Sales &amp; Technical Office</p></div>
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">store</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Kuala Lumpur</h3><p class="text-xs text-on-surface-variant">Sales &amp; Technical Office</p></div>
             </div>
-            <div class="group flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">local_shipping</span></div>
-              <div><h3 class="font-bold text-on-surface">Thailand &amp; Indonesia</h3><p class="text-sm text-on-surface-variant">Bangkok · Jakarta · Bali — HORECA Division &amp; appointed distributors</p></div>
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">store</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Penang</h3><p class="text-xs text-on-surface-variant">Sales &amp; Technical Office</p></div>
+            </div>
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">restaurant</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Bangkok</h3><p class="text-xs text-on-surface-variant">HORECA Division</p></div>
+            </div>
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">local_shipping</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Jakarta</h3><p class="text-xs text-on-surface-variant">Appointed Distributor</p></div>
+            </div>
+            <div class="group flex items-center gap-3 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary-container text-on-primary-container"><span class="material-symbols-outlined">local_shipping</span></div>
+              <div><h3 class="font-bold leading-tight text-on-surface">Bali</h3><p class="text-xs text-on-surface-variant">Appointed Distributor</p></div>
             </div>
           </div>
         </div>
@@ -167,22 +183,25 @@
       </div>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div class="rounded-2xl border border-surface-variant/10 bg-on-background/30 p-8 text-center">
-          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">40M</div><div class="font-bold">Cups of coffee</div><div class="mt-1 text-sm text-surface-variant">served annually in 20+ countries</div>
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed" data-count-to="40" data-suffix="M">0</div><div class="font-bold">Cups of coffee</div><div class="mt-1 text-sm text-surface-variant">served annually in 20+ countries</div>
         </div>
         <div class="rounded-2xl border border-surface-variant/10 bg-on-background/30 p-8 text-center">
-          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">1,500+</div><div class="font-bold">Machines deployed</div><div class="mt-1 text-sm text-surface-variant">across Southeast Asia</div>
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed" data-count-to="1500" data-suffix="+">0</div><div class="font-bold">Machines deployed</div><div class="mt-1 text-sm text-surface-variant">across Southeast Asia</div>
         </div>
         <div class="rounded-2xl border border-surface-variant/10 bg-on-background/30 p-8 text-center">
-          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">8</div><div class="font-bold">Technical Centres</div><div class="mt-1 text-sm text-surface-variant">across 4 countries</div>
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed" data-count-to="8">0</div><div class="font-bold">Technical Centres</div><div class="mt-1 text-sm text-surface-variant">across 4 countries</div>
         </div>
         <div class="rounded-2xl border border-surface-variant/10 bg-on-background/30 p-8 text-center">
-          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed">60+</div><div class="font-bold">Years of heritage</div><div class="mt-1 text-sm text-surface-variant">operating since 1963</div>
+          <div class="mb-2 text-[56px] font-bold leading-none text-secondary-fixed" data-count-to="60" data-suffix="+">0</div><div class="font-bold">Years of heritage</div><div class="mt-1 text-sm text-surface-variant">operating since 1963</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Certifications -->
+  <!-- TODO: official certification logo files pending from client (see comment #5). Real logos for
+       ISO 14001, bizSAFE, EcoVadis, Champion of Good & Halal are already used on the Sustainability page;
+       ISO 22000/FSSC 22000 & Rainforest Alliance official marks still needed (some require permission). -->
   <section class="section">
     <div class="container-page reveal">
       <div class="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">

@@ -55,18 +55,16 @@ const PAGES = {
 
 const NAV_KEYS = ['home', 'about', 'brands', 'solutions', 'sustainability', 'contact'];
 
-const DESKTOP_ACTIVE = 'text-label-sm font-bold text-primary border-b-2 border-primary pb-1';
-const DESKTOP_INACTIVE =
-  'text-label-sm font-semibold text-on-surface-variant transition-colors hover:text-primary';
-const MOBILE_ACTIVE = 'rounded-lg bg-primary/5 px-4 py-3 font-bold text-primary';
-const MOBILE_INACTIVE =
-  'rounded-lg px-4 py-3 font-semibold text-on-surface-variant transition-colors hover:bg-primary/5 hover:text-primary';
+// Links inside the dark full-screen nav overlay.
+const PANEL_BASE =
+  'group flex items-center justify-between border-b border-white/10 py-4 text-headline-lg font-bold transition-colors ';
+const PANEL_ACTIVE = PANEL_BASE + 'text-secondary-fixed';
+const PANEL_INACTIVE = PANEL_BASE + 'text-surface-variant hover:text-surface-bright';
 
 function buildHeader(activeKey) {
   let h = partials.header;
   NAV_KEYS.forEach((k) => {
-    h = h.replaceAll(`{{NAV_${k}}}`, k === activeKey ? DESKTOP_ACTIVE : DESKTOP_INACTIVE);
-    h = h.replaceAll(`{{MNAV_${k}}}`, k === activeKey ? MOBILE_ACTIVE : MOBILE_INACTIVE);
+    h = h.replaceAll(`{{PNAV_${k}}}`, k === activeKey ? PANEL_ACTIVE : PANEL_INACTIVE);
   });
   return h;
 }
