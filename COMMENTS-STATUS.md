@@ -12,6 +12,14 @@ Tracks `ConsolidatedComments_IBAsia.md` (client review, 14 Aug). Site: https://i
 | Solutions — remove CTA | Deleted the "Ready to elevate your beverage programme?" dark CTA banner. |
 | Move People & Communities | Removed the P&C stats block from **About Us**; the figures (47.8% female workforce, 50% female in management, 753.5 training hrs, 3,050 consumers) now live on the **Sustainability** impact section (Pillar 4 context). |
 
+## ✅ Done in pass 2 (from annotated screenshots)
+
+| Comment | What was built |
+|---|---|
+| Homepage footprint — **flag icons** | Neutral icons replaced with real **country flags** (SG / MY / TH / ID, MIT-licensed flag-icons, bundled locally) on the 6 location cards. |
+| Our Brands **banner** | Rebuilt to the WMF pattern: **background image**, old "Interested in Our Brand Portfolio?" header removed, **"Partner with IncoBev Asia"** promoted to header, "Get in Touch" CTA. (Final bg image still TBC — using `people.jpg` placeholder.) |
+| Sustainability **tabbed pillars** | The 5 Pillars are now an **interactive tabbed layout** (OCBC-style): clicking a pillar opens its detail panel with a visual + key points. (Final per-pillar imagery still TBC — using existing photography.) |
+
 ## 🟡 Blocked / TBC — awaiting asset or decision (stubbed with inline `TODO` comments)
 
 | # | Item | Needs | Where stubbed |

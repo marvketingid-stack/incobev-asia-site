@@ -41,46 +41,103 @@
         </div>
         <div class="mb-4 hidden h-px flex-grow bg-outline-variant md:block"></div>
       </div>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
-        <!-- Responsible Sourcing -->
-        <div class="group relative flex h-[400px] flex-col justify-end overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low p-8 transition-all hover:shadow-xl md:col-span-8 md:p-10">
-          <div class="absolute left-8 top-8 flex h-16 w-16 items-center justify-center rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">eco</span></div>
-          <div class="pointer-events-none absolute bottom-0 right-0 h-full w-2/3 opacity-25 transition-opacity group-hover:opacity-40"
-               style="mask-image:linear-gradient(to left,#000 30%,transparent);-webkit-mask-image:linear-gradient(to left,#000 30%,transparent)">
-            <img src="assets/images/coffeeshop.jpg" alt="" class="h-full w-full object-cover">
+      <!-- Tabbed pillar navigation (OCBC-style): click a pillar to open its detail panel.
+           TODO: final per-pillar imagery TBC from client — using existing photography as placeholders. -->
+      <div id="pillar-tabs">
+        <div role="tablist" aria-label="Sustainability pillars" class="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-3">
+          <button type="button" role="tab" data-pillar="1" aria-selected="true" class="pillar-tab"><span class="material-symbols-outlined">eco</span><span>Responsible Sourcing</span></button>
+          <button type="button" role="tab" data-pillar="2" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">factory</span><span>Responsible Operations</span></button>
+          <button type="button" role="tab" data-pillar="3" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">recycling</span><span>Circular Resource Management</span></button>
+          <button type="button" role="tab" data-pillar="4" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">groups</span><span>People &amp; Communities</span></button>
+          <button type="button" role="tab" data-pillar="5" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">handshake</span><span>Shared Value Creation</span></button>
+        </div>
+
+        <!-- Panel 1 -->
+        <div class="pillar-panel" data-panel="1">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[440px]"><img src="assets/images/sustainability-2.jpg" alt="Responsible coffee sourcing" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-5 p-8 lg:p-12">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">eco</span></span>
+              <h3 class="text-headline-lg">Responsible Sourcing</h3>
+              <p class="text-body-md text-on-surface-variant">Building direct relationships with coffee producers and cooperatives for fair prices, quality, and sustainable farming.</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Direct-from-farm &amp; collective sourcing</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Rainforest Alliance certified farms</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Purpose-aligned, ethical traders</li>
+              </ul>
+            </div>
           </div>
-          <div class="relative z-10">
-            <h3 class="mb-4 text-headline-lg">1 · Responsible Sourcing</h3>
-            <p class="mb-6 max-w-md text-body-md text-on-surface-variant">Building direct relationships with coffee producers and cooperatives for fair prices, quality, and sustainable farming — including Rainforest Alliance certified sourcing and purpose-aligned traders.</p>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="pillar-panel hidden" data-panel="2">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[440px]"><img src="assets/images/equipment-soul.jpg" alt="Efficient manufacturing operations" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-5 p-8 lg:p-12">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">factory</span></span>
+              <h3 class="text-headline-lg">Responsible Operations</h3>
+              <p class="text-body-md text-on-surface-variant">Efficient, FSSC 22000-certified manufacturing powered by renewable solar energy, with a culture of operational excellence.</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> FSSC 22000-certified facility</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Solar-powered roasting</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Reduced water use &amp; waste minimisation</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Lean, continuous-improvement culture</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <!-- Responsible Operations -->
-        <div class="group flex flex-col justify-between rounded-xl bg-primary p-8 text-on-primary transition-all hover:bg-primary-container md:col-span-4 md:p-10">
-          <span class="mb-8 text-4xl material-symbols-outlined">factory</span>
-          <div>
-            <h3 class="mb-3 text-headline-md">2 · Responsible Operations</h3>
-            <p class="mb-6 text-body-md text-on-primary/80">Efficient, FSSC 22000-certified manufacturing, renewable solar energy, and a culture of operational excellence.</p>
-            <span class="inline-block rounded bg-white/10 px-3 py-1 text-label-sm">Solar-powered roasting</span>
+
+        <!-- Panel 3 -->
+        <div class="pillar-panel hidden" data-panel="3">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[440px]"><img src="assets/images/coffeeshop.jpg" alt="Circular resource management" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-5 p-8 lg:p-12">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">recycling</span></span>
+              <h3 class="text-headline-lg">Circular Resource Management</h3>
+              <p class="text-body-md text-on-surface-variant">Designing waste out of the system through recyclable packaging, machine refurbishment, and coffee-grounds upcycling.</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Recyclable / compostable packaging (target Q4 2026)</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Machine recovery &amp; refurbishment</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Coffee-grounds upcycling</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Right-sized packaging &amp; material reduction</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <!-- Circular Resource Management -->
-        <div class="group rounded-xl border border-outline-variant p-8 transition-all hover:border-secondary md:col-span-4 md:p-10">
-          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-container text-secondary transition-colors group-hover:bg-secondary group-hover:text-on-secondary"><span class="material-symbols-outlined">recycling</span></div>
-          <h3 class="mb-3 text-headline-md">3 · Circular Resource Management</h3>
-          <p class="text-body-md text-on-surface-variant">Recyclable packaging, machine refurbishment, coffee-grounds upcycling, and right-sized packaging to cut material waste.</p>
+
+        <!-- Panel 4 -->
+        <div class="pillar-panel hidden" data-panel="4">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[440px]"><img src="assets/images/people.jpg" alt="People and communities" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-5 p-8 lg:p-12">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">groups</span></span>
+              <h3 class="text-headline-lg">People &amp; Communities</h3>
+              <p class="text-body-md text-on-surface-variant">Guided by the SuzukiCARES framework, putting people at the heart of everything we do.</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Community outreach</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Associate growth</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Regional suppliers</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Engaging consumers</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <!-- People & Communities -->
-        <div class="group rounded-xl border border-outline-variant p-8 transition-all hover:border-secondary md:col-span-4 md:p-10">
-          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-surface-container text-secondary transition-colors group-hover:bg-secondary group-hover:text-on-secondary"><span class="material-symbols-outlined">groups</span></div>
-          <h3 class="mb-3 text-headline-md">4 · People &amp; Communities</h3>
-          <p class="text-body-md text-on-surface-variant">Guided by the SuzukiCARES framework — community outreach, associate growth, regional suppliers, and engaging consumers.</p>
-        </div>
-        <!-- Shared Value Creation -->
-        <div class="group flex flex-col justify-between rounded-xl bg-surface-container-highest p-8 transition-all hover:shadow-xl md:col-span-4 md:p-10">
-          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/15 text-secondary"><span class="material-symbols-outlined">handshake</span></div>
-          <div>
-            <h3 class="mb-3 text-headline-md">5 · Shared Value Creation</h3>
-            <p class="text-body-md text-on-surface-variant">Helping customers reduce Scope 1, 2 &amp; 3 emissions through energy-efficient machines, green delivery, coffee recycling, and trade-in programmes.</p>
+
+        <!-- Panel 5 -->
+        <div class="pillar-panel hidden" data-panel="5">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[440px]"><img src="assets/images/hospitality.jpg" alt="Shared value creation with customers" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-5 p-8 lg:p-12">
+              <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-3xl">handshake</span></span>
+              <h3 class="text-headline-lg">Shared Value Creation</h3>
+              <p class="text-body-md text-on-surface-variant">Helping our customers cut their own Scope 1, 2 &amp; 3 emissions across their beverage operations.</p>
+              <ul class="space-y-2 text-body-md text-on-surface-variant">
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Energy-efficient machines &amp; monitoring</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Green delivery solutions</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Coffee recycling programme</li>
+                <li class="flex items-start gap-2"><span class="font-bold text-secondary">•</span> Trade-in &amp; responsible disposal</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

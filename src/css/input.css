@@ -50,6 +50,20 @@
   .card {
     @apply rounded-2xl border border-outline-variant bg-surface-container-lowest transition-all;
   }
+
+  /* Tabbed pillar navigation (Sustainability) */
+  .pillar-tab {
+    @apply flex flex-col items-center gap-2 rounded-xl border border-outline-variant bg-surface-container-lowest px-3 py-4 text-center text-label-sm font-semibold leading-tight text-on-surface-variant transition-all;
+  }
+  .pillar-tab:hover {
+    @apply border-primary/40 text-primary;
+  }
+  .pillar-tab[aria-selected='true'] {
+    @apply border-primary bg-primary text-on-primary shadow-md;
+  }
+  .pillar-tab .material-symbols-outlined {
+    @apply text-[26px];
+  }
 }
 
 /* ---------------------------------------------------------------------------

@@ -114,4 +114,22 @@
   } else {
     counters.forEach(function (c) { c.textContent = fmt(c, parseFloat(c.getAttribute('data-count-to'))); });
   }
+
+  /* ---- Tabbed pillar navigation (Sustainability) ---- */
+  var tablist = document.querySelector('#pillar-tabs [role="tablist"]');
+  if (tablist) {
+    var tabs = tablist.querySelectorAll('.pillar-tab');
+    var pillarPanels = document.querySelectorAll('#pillar-tabs .pillar-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var id = tab.getAttribute('data-pillar');
+        tabs.forEach(function (t) {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        pillarPanels.forEach(function (p) {
+          p.classList.toggle('hidden', p.getAttribute('data-panel') !== id);
+        });
+      });
+    });
+  }
 })();
