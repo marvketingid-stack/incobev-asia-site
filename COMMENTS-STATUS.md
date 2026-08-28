@@ -20,7 +20,22 @@ Tracks `ConsolidatedComments_IBAsia.md` (client review, 14 Aug). Site: https://i
 | Our Brands **banner** | Rebuilt to the WMF pattern: **background image**, old "Interested in Our Brand Portfolio?" header removed, **"Partner with IncoBev Asia"** promoted to header, "Get in Touch" CTA. (Final bg image still TBC — using `people.jpg` placeholder.) |
 | Sustainability **tabbed pillars** | The 5 Pillars are now an **interactive tabbed layout** (OCBC-style): clicking a pillar opens its detail panel with a visual + key points. (Final per-pillar imagery still TBC — using existing photography.) |
 
+## ✅ Done in pass 3 (24 Aug comments + client-supplied assets)
+
+| Comment | What was built |
+|---|---|
+| #4 Ecosystem section video | The two static images replaced with the **looping IncoBev wave-motif video** (client-supplied) — autoplay, muted, loop, with a poster frame. |
+| #4 Certifications logos | Icon badges replaced with the **6 real certification logos** supplied by client: ISO 22000, FSSC 22000, ISO 14001, bizSAFE Level 3, EcoVadis, Champion of Good (Home + Sustainability). |
+| #5 About Us — Heritage visual | Hero image swapped to the client-supplied **"Six Decades of Beverage Heritage"** banner. |
+| #5 About Us — wave visual + rename | "Our Heritage" section image swapped to the client-supplied **wave-motif** image; section renamed **"Our Heritage" → "Our Evolution"**. |
+| #8 Solutions — 4 segments | Icons/blurbs removed; all 4 cards now use the **uniform image-card treatment** (like Hotels & Resorts); **"Corporate Offices" → "Workspaces"**. *(Placeholder photos — final SharePoint images pending.)* |
+| #9 Solutions — Core Capabilities | Icons removed; each card now has a **blended, semi-transparent background image**. *(Placeholder photos — final SharePoint images pending.)* |
+
 ## 🟡 Blocked / TBC — awaiting asset or decision (stubbed with inline `TODO` comments)
+
+**Note:** the SharePoint download links in the comment doc require IncoFood login — I can't fetch them
+here. Where the client dropped the actual files into the project folder (ecosystem video, cert logos,
+About Us visuals) they are now used. The items below are still on SharePoint only, or need a decision:
 
 | # | Item | Needs | Where stubbed |
 |---|---|---|---|
