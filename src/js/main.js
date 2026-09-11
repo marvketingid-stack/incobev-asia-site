@@ -110,7 +110,6 @@
       { threshold: 0.4 }
     );
     counters.forEach(function (c) { cio.observe(c); });
-    window.setTimeout(function () { counters.forEach(function (c) { if (c.textContent === '0') animateCount(c); }); }, 2600);
   } else {
     counters.forEach(function (c) { c.textContent = fmt(c, parseFloat(c.getAttribute('data-count-to'))); });
   }
