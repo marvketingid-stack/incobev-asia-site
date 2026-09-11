@@ -17,39 +17,44 @@
       <div class="max-w-2xl">
         <span class="mb-6 inline-block rounded-full bg-secondary-container px-4 py-1.5 text-label-sm uppercase tracking-wider text-on-secondary-container">Our Sustainability Approach</span>
         <h1 class="mb-6 text-display-lg leading-tight text-on-surface">Building a <span class="text-secondary italic">Sustainable</span> Future Together</h1>
-        <p class="mb-10 max-w-xl text-body-lg text-on-surface-variant">
+        <p class="max-w-xl text-body-lg text-on-surface-variant">
           Our commitment to environmental responsibility runs across the entire supply chain — guided by five interconnected pillars and a clear path to net-zero by 2030.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#pillars" class="btn-primary bg-secondary px-8 py-4 text-on-secondary hover:bg-secondary/90">Explore Our Pillars <span class="material-symbols-outlined">arrow_forward</span></a>
-          <a href="#roadmap" class="btn-outline px-8 py-4">Net-Zero Roadmap</a>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- TODO: client-flagged FULL redesign pending (comment #7): convert this 5-Pillars text layout into a
-       tabbed/pillar navigation (OCBC-style) where each pillar opens its own detail panel, plus more visuals.
-       Blocked on final IA/content sign-off — keeping the current inline bento until then. -->
-  <!-- The 5 Pillars -->
+  <!-- 2. Our Climate Commitment -->
+  <section class="section relative overflow-hidden bg-primary text-on-primary">
+    <div class="container-page relative z-10 text-center reveal">
+      <span class="material-symbols-outlined mb-8 text-[48px]">energy_savings_leaf</span>
+      <h2 class="mb-8 text-display-lg">Our Climate <span class="text-secondary-fixed">Commitment</span></h2>
+      <p class="mx-auto mb-8 max-w-3xl text-headline-md opacity-90">
+        We are working toward net-zero carbon emissions across our operations by 2030 — partnering with suppliers and customers to decarbonise the beverage value chain across Southeast Asia.
+      </p>
+      <div class="inline-block rounded-full bg-on-primary/20 px-8 py-3 text-label-sm uppercase tracking-widest backdrop-blur-sm">Updated: Q1 2026</div>
+    </div>
+  </section>
+
+  <!-- 3. The 5 Sustainability Pillars -->
   <section class="section" id="pillars">
     <div class="container-page reveal">
       <div class="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
         <div class="max-w-xl">
-          <h2 class="mb-4 text-headline-xl text-on-surface">The 5 Pillars</h2>
+          <h2 class="mb-4 text-headline-xl text-on-surface">The 5 Sustainability <span class="text-primary">Pillars</span></h2>
           <p class="text-body-md text-on-surface-variant">A multi-faceted approach to regional impact — from how we source and operate to the communities and customers we serve.</p>
         </div>
         <div class="mb-4 hidden h-px flex-grow bg-outline-variant md:block"></div>
       </div>
       <!-- Tabbed pillar navigation (OCBC-style): click a pillar to open its detail panel.
            TODO: final per-pillar imagery TBC from client — using existing photography as placeholders. -->
-      <div id="pillar-tabs">
+      <div id="pillar-tabs" data-tabs>
         <div role="tablist" aria-label="Sustainability pillars" class="mb-8 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-3">
-          <button type="button" role="tab" data-pillar="1" aria-selected="true" class="pillar-tab"><span class="material-symbols-outlined">eco</span><span>Responsible Sourcing</span></button>
-          <button type="button" role="tab" data-pillar="2" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">factory</span><span>Responsible Operations</span></button>
-          <button type="button" role="tab" data-pillar="3" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">recycling</span><span>Circular Resource Management</span></button>
-          <button type="button" role="tab" data-pillar="4" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">groups</span><span>People &amp; Communities</span></button>
-          <button type="button" role="tab" data-pillar="5" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">handshake</span><span>Shared Value Creation</span></button>
+          <button type="button" role="tab" data-tab="1" aria-selected="true" class="pillar-tab"><span class="material-symbols-outlined">eco</span><span>Responsible Sourcing</span></button>
+          <button type="button" role="tab" data-tab="2" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">factory</span><span>Responsible Operations</span></button>
+          <button type="button" role="tab" data-tab="3" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">recycling</span><span>Circular Resource Management</span></button>
+          <button type="button" role="tab" data-tab="4" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">groups</span><span>People &amp; Communities</span></button>
+          <button type="button" role="tab" data-tab="5" aria-selected="false" class="pillar-tab"><span class="material-symbols-outlined">handshake</span><span>Shared Value Creation</span></button>
         </div>
 
         <!-- Panel 1 -->
@@ -144,50 +149,7 @@
     </div>
   </section>
 
-  <!-- Impact Metrics -->
-  <section class="section bg-inverse-surface">
-    <div class="container-page reveal">
-      <div class="mb-16 text-center">
-        <h2 class="mb-4 text-headline-xl text-surface-bright">Real Impact, Real Numbers</h2>
-        <p class="mx-auto max-w-2xl text-body-lg text-surface-variant">Our progress across environment, people, and community — 2025 figures.</p>
-      </div>
-      <!-- Environment + People & Communities figures (P&C stats moved here from About Us per client comment #8). -->
-      <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:gap-8">
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">Bronze</div>
-          <div class="mb-1 text-headline-md text-surface-bright">EcoVadis Rating</div>
-          <p class="text-sm text-surface-variant">Sarika Manufacturing SG — top 35% globally.</p>
-        </div>
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">1,000</div>
-          <div class="mb-1 text-headline-md text-surface-bright">Trees Target</div>
-          <p class="text-sm text-surface-variant">Reforestation in Colombia &amp; Ethiopia by 2026.</p>
-        </div>
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">47.8%</div>
-          <div class="mb-1 text-headline-md text-surface-bright">Female Workforce</div>
-          <p class="text-sm text-surface-variant">A diverse, inclusive team.</p>
-        </div>
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">50%</div>
-          <div class="mb-1 text-headline-md text-surface-bright">Female in Management</div>
-          <p class="text-sm text-surface-variant">Equal representation in leadership.</p>
-        </div>
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">3,050</div>
-          <div class="mb-1 text-headline-md text-surface-bright">Consumers Engaged</div>
-          <p class="text-sm text-surface-variant">Through events and workshops.</p>
-        </div>
-        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
-          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">753.5</div>
-          <div class="mb-1 text-headline-md text-surface-bright">Training Hours</div>
-          <p class="text-sm text-surface-variant">Invested in our people and partners.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Net-Zero Roadmap -->
+  <!-- 4. Net-Zero Roadmap -->
   <section class="section" id="roadmap">
     <div class="container-page reveal">
       <h2 class="mb-16 text-center text-headline-xl text-on-surface">Our Net-Zero 2030 Roadmap</h2>
@@ -250,32 +212,70 @@
     </div>
   </section>
 
-  <!-- Certifications -->
+  <!-- 5. Real Impact, Real Numbers (count-up) -->
+  <section class="section bg-inverse-surface">
+    <div class="container-page reveal">
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-headline-xl text-surface-bright">Real Impact, <span class="text-secondary-fixed">Real Numbers</span></h2>
+        <p class="mx-auto max-w-2xl text-body-lg text-surface-variant">Our progress across environment, people, and community — 2025 figures.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:gap-8">
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]">Bronze</div>
+          <div class="mb-1 text-headline-md text-surface-bright">EcoVadis Rating</div>
+          <p class="text-sm text-surface-variant">Sarika Manufacturing SG — top 35% globally.</p>
+        </div>
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]" data-count-to="1000">0</div>
+          <div class="mb-1 text-headline-md text-surface-bright">Trees Target</div>
+          <p class="text-sm text-surface-variant">Reforestation in Colombia &amp; Ethiopia by 2026.</p>
+        </div>
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]" data-count-to="47.8" data-decimals="1" data-suffix="%">0</div>
+          <div class="mb-1 text-headline-md text-surface-bright">Female Workforce</div>
+          <p class="text-sm text-surface-variant">A diverse, inclusive team.</p>
+        </div>
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]" data-count-to="50" data-suffix="%">0</div>
+          <div class="mb-1 text-headline-md text-surface-bright">Female in Management</div>
+          <p class="text-sm text-surface-variant">Equal representation in leadership.</p>
+        </div>
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]" data-count-to="3050">0</div>
+          <div class="mb-1 text-headline-md text-surface-bright">Consumers Engaged</div>
+          <p class="text-sm text-surface-variant">Through events and workshops.</p>
+        </div>
+        <div class="flex flex-col items-center rounded-2xl border border-white/10 p-6 text-center md:p-8">
+          <div class="mb-2 text-headline-xl font-bold leading-none text-secondary-fixed md:text-[56px]" data-count-to="753.5" data-decimals="1">0</div>
+          <div class="mb-1 text-headline-md text-surface-bright">Training Hours</div>
+          <p class="text-sm text-surface-variant">Invested in our people and partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Accolades logo row (marquee — same treatment as Homepage) -->
   <section class="section bg-surface-container-low">
     <div class="container-page reveal">
-      <div class="flex flex-col gap-12 lg:flex-row lg:items-stretch">
-        <div class="w-full lg:w-1/2">
-          <h2 class="mb-6 text-headline-xl text-on-surface">Certified Excellence</h2>
-          <p class="mb-10 text-body-lg text-on-surface-variant">Our commitment is validated by recognised standards for food safety, environmental management, workplace safety, and social responsibility.</p>
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">verified_user</span><span class="text-label-sm font-bold">ISO 22000 &amp; FSSC 22000</span></div>
-            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">eco</span><span class="text-label-sm font-bold">ISO 14001 Environmental</span></div>
-            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">health_and_safety</span><span class="text-label-sm font-bold">bizSAFE Level 3</span></div>
-            <div class="flex items-center gap-4 rounded-lg border border-outline-variant bg-surface-container-lowest p-5 shadow-sm"><span class="material-symbols-outlined text-3xl text-secondary">forest</span><span class="text-label-sm font-bold">Rainforest Alliance</span></div>
-          </div>
-          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6">
-            <img src="assets/certs/iso-22000.png" alt="ISO 22000" class="h-14 w-auto object-contain">
-            <img src="assets/certs/fssc-22000.jpg" alt="FSSC 22000" class="h-12 w-auto object-contain">
-            <img src="assets/certs/iso-14001.png" alt="ISO 14001" class="h-14 w-auto object-contain">
-            <img src="assets/certs/bizsafe.jpg" alt="bizSAFE Level 3" class="h-12 w-auto object-contain">
-            <img src="assets/certs/ecovadis.png" alt="EcoVadis" class="h-14 w-auto object-contain">
-            <img src="assets/certs/champion-of-good.png" alt="Champion of Good" class="h-14 w-auto object-contain">
-          </div>
-        </div>
-        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl lg:aspect-auto lg:w-1/2">
-          <img src="assets/images/sustainability-portrait.jpg" alt="Rainforest Alliance certified coffee from Robert Timms and Suzuki Coffee in a forest setting" class="h-full w-full object-cover lg:absolute lg:inset-0">
-          <div class="absolute inset-0 mix-blend-multiply bg-primary/10"></div>
-        </div>
+      <div class="mb-12 text-center">
+        <h2 class="text-headline-xl text-on-surface">Awards &amp; <span class="text-primary">Accolades</span></h2>
+        <p class="mx-auto mt-4 max-w-2xl text-body-md text-on-surface-variant">Recognised standards for food safety, environmental management, workplace safety, and social responsibility.</p>
+      </div>
+    </div>
+    <div class="logo-marquee" aria-label="Certifications and awards">
+      <div class="logo-track">
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/iso-22000.png" alt="ISO 22000" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">ISO 22000</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/fssc-22000.jpg" alt="FSSC 22000" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">FSSC 22000</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/iso-14001.png" alt="ISO 14001" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">ISO 14001</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/bizsafe.jpg" alt="bizSAFE Level 3" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">bizSAFE Level 3</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/ecovadis.png" alt="EcoVadis" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">EcoVadis Bronze</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2"><img src="assets/certs/champion-of-good.png" alt="Champion of Good" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">Champion of Good</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/iso-22000.png" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">ISO 22000</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/fssc-22000.jpg" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">FSSC 22000</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/iso-14001.png" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">ISO 14001</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/bizsafe.jpg" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">bizSAFE Level 3</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/ecovadis.png" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">EcoVadis Bronze</span></div>
+        <div class="mx-6 flex w-40 shrink-0 flex-col items-center justify-center gap-2" aria-hidden="true"><img src="assets/certs/champion-of-good.png" alt="" class="h-16 w-auto object-contain"><span class="text-xs font-semibold text-on-surface-variant">Champion of Good</span></div>
       </div>
     </div>
   </section>

@@ -64,6 +64,49 @@
   .pillar-tab .material-symbols-outlined {
     @apply text-[26px];
   }
+
+  /* Interactive timeline year markers (About Us) */
+  .year-btn {
+    @apply relative shrink-0 rounded-full border border-outline-variant bg-surface-container-lowest px-5 py-2 text-label-sm font-bold text-on-surface-variant transition-all;
+  }
+  .year-btn:hover {
+    @apply border-primary/50 text-primary;
+  }
+  .year-btn[aria-selected='true'] {
+    @apply border-primary bg-primary text-on-primary shadow-md;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Logo marquee / ticker (Awards & Accolades, Sustainability logo row)
+--------------------------------------------------------------------------- */
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 
 /* ---------------------------------------------------------------------------
