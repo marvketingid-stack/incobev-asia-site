@@ -7,13 +7,13 @@
 {{> header}}
 <main>
 
-  <!-- 1. Top hero video banner -->
-  <!-- BLOCKED — awaiting final hero video from YJ. Slot is video-ready: replace the <img> with
-       <video autoplay muted loop playsinline poster="assets/images/hero-home.jpg"><source src="…"></video>.
-       Ref behaviour: dksh.com. -->
+  <!-- 1. Top hero video banner (client-supplied, autoplay/muted/loop) -->
   <section class="relative flex min-h-[620px] items-center overflow-hidden lg:min-h-[760px]">
     <div class="absolute inset-0 z-0">
-      <img src="assets/images/hero-home.jpg" alt="Barista pouring latte art" class="h-full w-full object-cover">
+      <video autoplay muted loop playsinline poster="assets/images/hero-banner-poster.jpg" class="h-full w-full object-cover">
+        <source src="assets/video/hero-banner.mp4" type="video/mp4">
+        <img src="assets/images/hero-home.jpg" alt="Barista pouring latte art" class="h-full w-full object-cover">
+      </video>
       <div class="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30"></div>
     </div>
     <div class="container-page relative z-10 py-16">
@@ -41,7 +41,7 @@
       <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
         <div class="relative order-2 lg:order-1">
           <video autoplay muted loop playsinline poster="assets/images/ecosystem-poster.jpg"
-            class="block w-full" aria-label="IncoBev Asia integrated beverage ecosystem — brand wave motif">
+            class="block w-full bg-white" aria-label="IncoBev Asia integrated beverage ecosystem — brand wave motif">
             <source src="assets/video/ecosystem-wave.mp4" type="video/mp4">
           </video>
         </div>
@@ -50,20 +50,6 @@
           <p class="text-body-md text-on-surface-variant">
             We help businesses across hospitality, foodservice, workplace, retail, and institutional sectors create exceptional beverage experiences — combining equipment, consumables, manufacturing, technical expertise, and customer success under one roof.
           </p>
-          <ul class="space-y-6 pt-2">
-            <li class="flex items-start gap-4">
-              <div class="mt-1 rounded bg-secondary/10 p-1 text-secondary"><span class="material-symbols-outlined text-[20px]">coffee_maker</span></div>
-              <div><span class="font-bold text-on-background">Equipment &amp; Consumables</span><p class="mt-1 text-body-md text-on-surface-variant">World-class commercial beverage systems paired with coffee, tea, and consumables.</p></div>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="mt-1 rounded bg-secondary/10 p-1 text-secondary"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span></div>
-              <div><span class="font-bold text-on-background">Manufacturing Excellence</span><p class="mt-1 text-body-md text-on-surface-variant">Roasting and production capabilities backed by six decades of regional heritage.</p></div>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="mt-1 rounded bg-secondary/10 p-1 text-secondary"><span class="material-symbols-outlined text-[20px]">engineering</span></div>
-              <div><span class="font-bold text-on-background">Technical Expertise &amp; Customer Success</span><p class="mt-1 text-body-md text-on-surface-variant">Certified specialists ensuring every machine performs — with training and ongoing support.</p></div>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -79,11 +65,11 @@
             Backed by over 6 decades of regional operating heritage, IncoBev Asia has evolved from its coffee roots into a diversified beverage solutions group serving businesses across Asia.
           </p>
         </div>
-        <!-- BLOCKED — awaiting Our Expertise video from client. Slot is video-ready: add <source> when received.
-             Poster shows a still until then. -->
         <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-          <video autoplay muted loop playsinline poster="assets/images/heritage.jpg"
+          <video autoplay muted loop playsinline poster="assets/images/expertise-poster.jpg"
             class="block aspect-video w-full object-cover" aria-label="IncoBev Asia beverage expertise">
+            <source src="assets/video/expertise.mp4" type="video/mp4">
+            <img src="assets/images/heritage.jpg" alt="IncoBev Asia beverage expertise" class="h-full w-full object-cover">
           </video>
         </div>
       </div>
@@ -146,7 +132,6 @@
     <div class="container-page reveal">
       <div class="mb-16 text-center">
         <h2 class="text-headline-xl">Our Regional <span class="text-secondary-fixed">Scale</span></h2>
-        <p class="mt-4 text-surface-variant">Six decades of heritage, delivered through a modern regional network.</p>
       </div>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div class="rounded-2xl border border-surface-variant/10 bg-on-background/30 p-8 text-center">
