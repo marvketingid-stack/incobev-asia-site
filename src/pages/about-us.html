@@ -8,45 +8,29 @@
 <main>
 
   <!-- Hero -->
-  <section class="relative flex min-h-[560px] items-center overflow-hidden lg:min-h-[680px]">
+  <section class="relative flex min-h-[520px] items-center overflow-hidden lg:min-h-[640px]">
     <div class="absolute inset-0 z-0">
       <img src="assets/images/about-heritage.jpg" alt="IncoBev Asia beverage heritage" class="h-full w-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20"></div>
     </div>
     <div class="container-page relative z-10">
-      <div class="max-w-2xl space-y-8">
+      <div class="max-w-2xl">
         <h1 class="text-display-lg text-on-surface">About <span class="text-primary">Us</span></h1>
-        <p class="max-w-xl text-body-lg leading-relaxed text-on-surface-variant">
-          Founded in Singapore in 1994, IncoBev Asia is a leading integrated beverage solutions company specialising in commercial beverage systems, coffee, HoReCa, and regional beverage distribution across Southeast Asia.
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- Our Heritage -->
-  <section class="section bg-surface-container-low">
-    <div class="container-page reveal">
-      <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-        <div class="relative mb-12 px-2 lg:mb-0">
-          <img src="assets/images/our-evolution.png" alt="IncoBev Asia wave motif — the evolution of our beverage ecosystem" class="w-full">
-          <div class="absolute -bottom-2 right-2 rounded-xl bg-primary p-6 text-on-primary shadow-2xl md:p-8">
-            <span class="block text-headline-xl md:text-display-lg">60+</span>
-            <span class="mt-2 block text-label-sm uppercase tracking-widest">Years of Heritage</span>
-          </div>
-        </div>
-        <div class="lg:pl-8">
-          <h2 class="mb-8 text-headline-xl text-on-surface">Who We <span class="text-primary">Are</span></h2>
-          <p class="mb-6 text-body-lg text-on-surface-variant">
-            Backed by over six decades of regional operating heritage through its parent group, IncoBev Asia has evolved from one of Southeast Asia’s leading consumer coffee businesses into a diversified regional beverage solutions group.
-          </p>
-          <p class="mb-10 text-body-md text-on-surface-variant">
-            Today we serve businesses across hospitality, foodservice, workplace, retail, and institutional sectors — combining equipment, consumables, manufacturing, technical expertise, and customer success capabilities. The origins of the Group trace back to 1963, when the business first began operating within Southeast Asia’s consumer beverage industry.
-          </p>
-          <div class="grid grid-cols-2 gap-8 border-t border-outline-variant pt-10">
-            <div><span class="mb-1 block text-headline-md font-semibold text-secondary">4</span><span class="text-label-sm text-on-surface-variant">Countries of Operation</span></div>
-            <div><span class="mb-1 block text-headline-md font-semibold text-secondary">1963</span><span class="text-label-sm text-on-surface-variant">Group Origins</span></div>
-          </div>
-        </div>
+  <!-- Who We Are — heading + body overlaid on image -->
+  <section class="relative flex min-h-[440px] items-center overflow-hidden lg:min-h-[560px]">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/who-we-are.jpg" alt="Singapore Marina Bay skyline" class="h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-inverse-surface via-inverse-surface/85 to-inverse-surface/10"></div>
+    </div>
+    <div class="container-page relative z-10">
+      <div class="max-w-xl text-surface-bright">
+        <h2 class="mb-6 text-headline-xl">Who We <span class="text-secondary-fixed">Are</span></h2>
+        <p class="mb-5 text-body-lg text-surface-bright/90">Backed by over six decades of regional operating heritage through its parent group, IncoBev Asia has evolved from one of Southeast Asia’s leading consumer coffee businesses into a diversified regional beverage solutions group.</p>
+        <p class="text-body-md text-surface-bright/75">Today we serve businesses across hospitality, foodservice, workplace, retail, and institutional sectors — combining equipment, consumables, manufacturing, technical expertise, and customer success capabilities.</p>
       </div>
     </div>
   </section>
@@ -55,7 +39,7 @@
   <section class="section bg-surface-container-lowest">
     <div class="container-page reveal">
       <div class="mx-auto mb-16 max-w-3xl text-center">
-        <h2 class="mb-6 text-headline-xl text-on-surface">Our Vision &amp; Mission</h2>
+        <h2 class="mb-6 text-headline-xl text-on-surface">Our Vision &amp; <span class="text-primary">Mission</span></h2>
         <p class="text-body-lg text-on-surface-variant">Shaping the future of beverage — turning vision into reality.</p>
       </div>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -66,10 +50,6 @@
             <h3 class="mb-6 text-headline-lg">Shaping The Future of Beverage</h3>
             <p class="max-w-xl text-body-lg text-on-surface-variant">We are committed to elevating Asia’s beverage experience through innovation, expertise and world-class beverage solutions.</p>
           </div>
-          <div class="mt-12 flex items-center gap-4 text-secondary transition-all group-hover:gap-6">
-            <span class="font-bold">Shaping the Future of Beverage</span>
-            <span class="material-symbols-outlined">trending_flat</span>
-          </div>
         </div>
         <!-- Mission -->
         <div class="flex flex-col rounded-2xl bg-primary p-8 text-on-primary md:p-10 lg:p-12">
@@ -77,100 +57,97 @@
           <h3 class="mb-6 text-headline-md">Our Mission</h3>
           <p class="text-body-md leading-relaxed opacity-90">To deliver integrated beverage solutions that help businesses create exceptional beverage experiences.</p>
         </div>
-        <!-- Values -->
-        <div class="rounded-2xl border border-outline-variant bg-surface-container-low p-8 md:p-10">
-          <span class="mb-6 block text-3xl text-tertiary material-symbols-outlined">auto_awesome</span>
-          <h4 class="mb-4 text-headline-md">Inspire Excellence</h4>
-          <p class="text-body-md text-on-surface-variant">Bringing the technical depth and craft that premium beverage brands require.</p>
+        <!-- Values (client-supplied imagery) -->
+        <div class="overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low">
+          <img src="assets/images/value-inspire.jpg" alt="Inspire Excellence" class="h-44 w-full object-cover">
+          <div class="p-8 md:p-10">
+            <h4 class="mb-4 text-headline-md">Inspire Excellence</h4>
+            <p class="text-body-md text-on-surface-variant">Bringing the technical depth and craft that premium beverage brands require.</p>
+          </div>
         </div>
-        <div class="rounded-2xl border border-outline-variant bg-surface-container-low p-8 md:p-10">
-          <span class="mb-6 block text-3xl text-secondary material-symbols-outlined">favorite</span>
-          <h4 class="mb-4 text-headline-md">Create Meaningful Experiences</h4>
-          <p class="text-body-md text-on-surface-variant">Helping partners serve exceptional beverages, one moment at a time.</p>
+        <div class="overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low">
+          <img src="assets/images/value-experiences.jpg" alt="Create Meaningful Experiences" class="h-44 w-full object-cover">
+          <div class="p-8 md:p-10">
+            <h4 class="mb-4 text-headline-md">Create Meaningful Experiences</h4>
+            <p class="text-body-md text-on-surface-variant">Helping partners serve exceptional beverages, one moment at a time.</p>
+          </div>
         </div>
-        <div class="rounded-2xl border border-outline-variant bg-surface-container-low p-8 md:p-10">
-          <span class="mb-6 block text-3xl text-primary material-symbols-outlined">waves</span>
-          <h4 class="mb-4 text-headline-md">Build the Next Wave</h4>
-          <p class="text-body-md text-on-surface-variant">Growing the next wave of beverage excellence across the region together.</p>
+        <div class="overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-low">
+          <img src="assets/images/value-nextwave.jpg" alt="Build the Next Wave" class="h-44 w-full object-cover">
+          <div class="p-8 md:p-10">
+            <h4 class="mb-4 text-headline-md">Build the Next Wave</h4>
+            <p class="text-body-md text-on-surface-variant">Growing the next wave of beverage excellence across the region together.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive company timeline (year markers → contextual content per year) -->
-  <!-- BLOCKED (per-year imagery): timeline photos awaiting client (SharePoint). Showing year + brand logo
-       where available; ready to add a banner image per panel. Ref: coca-colacompany.com history. -->
+  <!-- Interactive company timeline (4 eras → visual + logos + text per era; ref: coca-colacompany.com history) -->
   <section class="section bg-surface">
     <div class="container-page reveal">
       <div class="mb-10 text-center">
         <h2 class="mb-3 text-headline-xl">Our <span class="text-primary">Journey</span></h2>
-        <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">60 years of growth &amp; partnership — select a year to explore that chapter.</p>
+        <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">60 years of growth &amp; partnership — select an era to explore that chapter.</p>
       </div>
       <div id="timeline" data-tabs>
-        <div role="tablist" aria-label="Company timeline" class="mb-10 flex gap-3 overflow-x-auto pb-3 md:flex-wrap md:justify-center">
-          <button role="tab" data-tab="1963" aria-selected="true" tabindex="0" class="year-btn">1963</button>
-          <button role="tab" data-tab="1979" aria-selected="false" tabindex="-1" class="year-btn">1979</button>
-          <button role="tab" data-tab="1991" aria-selected="false" tabindex="-1" class="year-btn">1991</button>
-          <button role="tab" data-tab="1994" aria-selected="false" tabindex="-1" class="year-btn">1994</button>
-          <button role="tab" data-tab="2005" aria-selected="false" tabindex="-1" class="year-btn">2005</button>
-          <button role="tab" data-tab="2012" aria-selected="false" tabindex="-1" class="year-btn">2012</button>
-          <button role="tab" data-tab="2017" aria-selected="false" tabindex="-1" class="year-btn">2017</button>
-          <button role="tab" data-tab="2022" aria-selected="false" tabindex="-1" class="year-btn">2022</button>
-          <button role="tab" data-tab="2026" aria-selected="false" tabindex="-1" class="year-btn">2026</button>
+        <div role="tablist" aria-label="Company timeline" class="relative mb-10 flex gap-3 overflow-x-auto pb-3 md:justify-center">
+          <span class="absolute left-4 right-4 top-1/2 -z-10 hidden h-0.5 -translate-y-1/2 bg-outline-variant md:block"></span>
+          <button role="tab" data-tab="e1" aria-selected="true" tabindex="0" class="year-btn">1963 – 1991</button>
+          <button role="tab" data-tab="e2" aria-selected="false" tabindex="-1" class="year-btn">1994 – 2012</button>
+          <button role="tab" data-tab="e3" aria-selected="false" tabindex="-1" class="year-btn">2017 – 2022</button>
+          <button role="tab" data-tab="e4" aria-selected="false" tabindex="-1" class="year-btn">2024 – 2026</button>
         </div>
 
-        <div class="pillar-panel" data-panel="1963">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">1963</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">The Beginning</span></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Group begins operations in Southeast Asia</h3><p class="text-body-md text-on-surface-variant">The origins of the Group trace back to 1963, when the business first began operating within Southeast Asia’s consumer beverage industry.</p></div>
+        <!-- Era 1 -->
+        <div class="pillar-panel" data-panel="e1">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-1963.jpg" alt="1963–1991 — Origins" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
+              <span class="text-label-sm uppercase tracking-widest text-secondary">1963 – 1991</span>
+              <h3 class="text-headline-lg">Origins</h3>
+              <p class="text-body-md text-on-surface-variant">The Group began operating within Southeast Asia’s consumer beverage industry in 1963. Suzuki Cafe brought the first Japanese gourmet coffee to Singapore (Bukit Timah), IncoBev was appointed Franke distributor, and the Suzuki Coffee Roastery was established in Ang Mo Kio.</p>
+              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-9 w-auto object-contain"></div>
+            </div>
           </div>
         </div>
-        <div class="pillar-panel hidden" data-panel="1979">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">1979</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Suzuki Cafe</span><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="mt-6 h-10 w-auto self-start object-contain"></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Suzuki Cafe established</h3><p class="text-body-md text-on-surface-variant">Introduced the first Japanese gourmet coffee to Singapore, with the first shop established in Bukit Timah, Singapore.</p></div>
+
+        <!-- Era 2 -->
+        <div class="pillar-panel hidden" data-panel="e2">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-1994.jpg" alt="1994–2012 — Group Foundation" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
+              <span class="text-label-sm uppercase tracking-widest text-secondary">1994 – 2012</span>
+              <h3 class="text-headline-lg">Group Foundation</h3>
+              <p class="text-body-md text-on-surface-variant">Fieber Tradings was founded in Singapore (1994). Suzuki joined the Group and scaled its Chin Bee roastery, operations expanded into Malaysia, and Kaffa Kaldi, Schaerer and Sun Siam Thailand joined IncoBev Asia.</p>
+              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/fieber.png" alt="Fieber Tradings" class="h-10 w-auto object-contain"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-8 w-auto object-contain"><img src="assets/logos/kaffa-kaldi.png" alt="Kaffa Kaldi" class="h-7 w-auto object-contain"></div>
+            </div>
           </div>
         </div>
-        <div class="pillar-panel hidden" data-panel="1991">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">1991</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Roastery</span><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="mt-6 h-10 w-auto self-start object-contain"></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Suzuki Coffee Roastery established</h3><p class="text-body-md text-on-surface-variant">As demand for high-quality coffee grew, Suzuki expanded its operations and introduced a roastery in Ang Mo Kio, Singapore.</p></div>
+
+        <!-- Era 3 -->
+        <div class="pillar-panel hidden" data-panel="e3">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-2017.jpg" alt="2017–2022 — Premium Expansion" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
+              <span class="text-label-sm uppercase tracking-widest text-secondary">2017 – 2022</span>
+              <h3 class="text-headline-lg">Premium Expansion</h3>
+              <p class="text-body-md text-on-surface-variant">Entered Indonesia via PT Ambrosius Utama. Appointed San Remo, La San Marco, Zummo and La Marzocco, and became the official licensee for Robert Timms Professional Coffee.</p>
+              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/pt-ambrosius.svg" alt="PT Ambrosius Utama" class="h-9 w-auto object-contain"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-8 w-auto object-contain"><img src="assets/logos/zummo.png" alt="Zummo" class="h-6 w-auto object-contain"></div>
+            </div>
           </div>
         </div>
-        <div class="pillar-panel hidden" data-panel="1994">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">1994</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Foundation</span></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Fieber Tradings founded in Singapore</h3><p class="text-body-md text-on-surface-variant">At a time when premium coffee solutions and advanced beverage equipment were still uncommon, Fieber Tradings was established to help businesses elevate their beverage programmes.</p></div>
-          </div>
-        </div>
-        <div class="pillar-panel hidden" data-panel="2005">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">2005</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Malaysia</span><img src="assets/flags/my.svg" alt="" class="mt-6 h-8 w-11 self-start rounded object-cover ring-1 ring-outline-variant"></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Expansion into Malaysia</h3><p class="text-body-md text-on-surface-variant">Suzuki Coffee expanded operations into Malaysia to meet the rising demand for gourmet coffee across Southeast Asia and growing tourism.</p></div>
-          </div>
-        </div>
-        <div class="pillar-panel hidden" data-panel="2012">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">2012</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Thailand</span><img src="assets/flags/th.svg" alt="" class="mt-6 h-8 w-11 self-start rounded object-cover ring-1 ring-outline-variant"></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Sun Siam Thailand joins the Group</h3><p class="text-body-md text-on-surface-variant">Specialising in the distribution of ready-to-drink beverages and brands, Sun Siam Thailand joined IncoBev Asia Group.</p></div>
-          </div>
-        </div>
-        <div class="pillar-panel hidden" data-panel="2017">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">2017</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Indonesia</span><img src="assets/flags/id.svg" alt="" class="mt-6 h-8 w-11 self-start rounded object-cover ring-1 ring-outline-variant"></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Entered the Indonesian market</h3><p class="text-body-md text-on-surface-variant">Expanded operations into Indonesia through PT Ambrosius Utama to capture the growing HORECA opportunity.</p></div>
-          </div>
-        </div>
-        <div class="pillar-panel hidden" data-panel="2022">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-outline-variant pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-primary">2022</span><span class="mt-3 text-label-sm uppercase tracking-widest text-secondary">Premium Brands</span><div class="mt-6 flex items-center gap-4"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-8 w-auto object-contain"><img src="assets/logos/zummo.png" alt="Zummo" class="h-6 w-auto object-contain"></div></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg">Premium brand portfolio expansion</h3><p class="text-body-md text-on-surface-variant">Appointed Zummo and La Marzocco distributor — bringing premium espresso equipment and fresh juice extraction systems to the region.</p></div>
-          </div>
-        </div>
-        <div class="pillar-panel hidden" data-panel="2026">
-          <div class="grid grid-cols-1 gap-6 rounded-2xl border border-outline-variant bg-primary p-8 text-on-primary md:grid-cols-[38%_62%] md:gap-10 md:p-12">
-            <div class="flex flex-col justify-center border-b border-white/20 pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8"><span class="text-display-lg font-bold leading-none text-secondary-fixed">2026</span><span class="mt-3 text-label-sm uppercase tracking-widest text-on-primary/80">IncoBev Asia</span></div>
-            <div class="flex flex-col justify-center gap-4"><h3 class="text-headline-lg text-on-primary">Restructured into IncoBev Asia</h3><p class="text-body-md text-on-primary/85">Fieber Tradings was restructured into IncoBev Asia — the regional holding company consolidating and overseeing all brand portfolios, business units and strategic investments across Southeast Asia.</p></div>
+
+        <!-- Era 4 -->
+        <div class="pillar-panel hidden" data-panel="e4">
+          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
+            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-2024.jpg" alt="2024–2026 — IncoBev Asia" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
+            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
+              <span class="text-label-sm uppercase tracking-widest text-secondary">2024 – 2026</span>
+              <h3 class="text-headline-lg">IncoBev Asia</h3>
+              <p class="text-body-md text-on-surface-variant">Launched a dedicated HORECA Division in Thailand, then restructured Fieber Tradings into IncoBev Asia — the regional holding company consolidating and overseeing all brand portfolios, business units and strategic investments across Southeast Asia.</p>
+              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/incobev-thailand.png" alt="IncoBev Thailand" class="h-9 w-auto object-contain"><img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" class="h-8 w-auto object-contain"></div>
+            </div>
           </div>
         </div>
       </div>
