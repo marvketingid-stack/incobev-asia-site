@@ -67,7 +67,7 @@
 
   /* Interactive timeline year markers (About Us) */
   .year-btn {
-    @apply relative shrink-0 rounded-full border border-outline-variant bg-surface-container-lowest px-5 py-2 text-label-sm font-bold text-on-surface-variant transition-all;
+    @apply relative shrink-0 rounded-full border border-outline-variant bg-surface-container-lowest px-3.5 py-1.5 text-xs font-bold text-on-surface-variant transition-all md:px-5 md:py-2 md:text-label-sm;
   }
   .year-btn:hover {
     @apply border-primary/50 text-primary;

@@ -69,22 +69,23 @@
   </section>
 
   <!-- Interactive company timeline (4 eras → visual + logos + text per era; ref: coca-colacompany.com history) -->
-  <section class="section !pt-0 bg-surface">
+  <section class="section !pt-16 md:!pt-24 bg-surface">
     <div class="container-page reveal">
       <div class="mb-10 text-center">
         <h2 class="mb-3 text-headline-xl">Our <span class="text-primary">Journey</span></h2>
         <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">60 years of growth &amp; partnership — select an era to explore that chapter.</p>
       </div>
       <div id="timeline" data-tabs>
-        <div class="mb-10 flex items-center gap-3">
-          <div role="tablist" aria-label="Company timeline" class="relative flex flex-1 gap-3 overflow-x-auto pb-3 md:justify-center">
+        <div class="mb-10 flex items-center gap-2">
+          <button type="button" class="tab-prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30 md:hidden" aria-label="Previous era"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+          <div role="tablist" aria-label="Company timeline" class="relative flex flex-1 gap-2 overflow-x-auto pb-3 md:gap-3 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <span class="absolute left-4 right-4 top-1/2 -z-10 hidden h-0.5 -translate-y-1/2 bg-outline-variant md:block"></span>
             <button role="tab" data-tab="e1" aria-selected="true" tabindex="0" class="year-btn">1963 – 1991</button>
             <button role="tab" data-tab="e2" aria-selected="false" tabindex="-1" class="year-btn">1994 – 2012</button>
             <button role="tab" data-tab="e3" aria-selected="false" tabindex="-1" class="year-btn">2017 – 2022</button>
             <button role="tab" data-tab="e4" aria-selected="false" tabindex="-1" class="year-btn">2024 – 2026</button>
           </div>
-          <button type="button" class="tab-next flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30 md:hidden" aria-label="Next era"><span class="material-symbols-outlined">chevron_right</span></button>
+          <button type="button" class="tab-next flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30 md:hidden" aria-label="Next era"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
         </div>
 
         <!-- Era 1 -->
@@ -95,7 +96,7 @@
               <span class="text-label-sm uppercase tracking-widest text-secondary">1963 – 1991</span>
               <h3 class="text-headline-lg">Origins</h3>
               <p class="text-body-md text-on-surface-variant">The Group began operating within Southeast Asia’s consumer beverage industry in 1963. Suzuki Cafe brought the first Japanese gourmet coffee to Singapore (Bukit Timah), IncoBev was appointed Franke distributor, and the Suzuki Coffee Roastery was established in Ang Mo Kio.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-12 w-auto object-contain"></div>
+              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@
               <span class="text-label-sm uppercase tracking-widest text-secondary">1994 – 2012</span>
               <h3 class="text-headline-lg">Group Foundation</h3>
               <p class="text-body-md text-on-surface-variant">Fieber Tradings was founded in Singapore (1994). Suzuki joined the Group and scaled its Chin Bee roastery, operations expanded into Malaysia, and Kaffa Kaldi, Schaerer and Sun Siam Thailand joined IncoBev Asia.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/fieber.png" alt="Fieber Tradings" class="h-11 w-auto object-contain"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-11 w-auto object-contain"><img src="assets/logos/kaffa-kaldi.png" alt="Kaffa Kaldi" class="h-6 w-auto object-contain"></div>
+              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/fieber.png" alt="Fieber Tradings" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/kaffa-kaldi.png" alt="Kaffa Kaldi" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
             </div>
           </div>
         </div>
@@ -121,7 +122,7 @@
               <span class="text-label-sm uppercase tracking-widest text-secondary">2017 – 2022</span>
               <h3 class="text-headline-lg">Premium Expansion</h3>
               <p class="text-body-md text-on-surface-variant">Entered Indonesia via PT Ambrosius Utama. Appointed San Remo, La San Marco, Zummo and La Marzocco, and became the official licensee for Robert Timms Professional Coffee.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/pt-ambrosius.svg" alt="PT Ambrosius Utama" class="h-11 w-auto object-contain"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-9 w-auto object-contain"><img src="assets/logos/zummo.png" alt="Zummo" class="h-8 w-auto object-contain"></div>
+              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/pt-ambrosius.svg" alt="PT Ambrosius Utama" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/zummo.png" alt="Zummo" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
             </div>
           </div>
         </div>
@@ -134,7 +135,7 @@
               <span class="text-label-sm uppercase tracking-widest text-secondary">2024 – 2026</span>
               <h3 class="text-headline-lg">IncoBev Asia</h3>
               <p class="text-body-md text-on-surface-variant">Launched a dedicated HORECA Division in Thailand, then restructured Fieber Tradings into IncoBev Asia — the regional holding company consolidating and overseeing all brand portfolios, business units and strategic investments across Southeast Asia.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-6"><img src="assets/logos/incobev-thailand.png" alt="IncoBev Thailand" class="h-9 w-auto object-contain"><img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" class="h-9 w-auto object-contain"></div>
+              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/incobev-thailand.png" alt="IncoBev Thailand" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
             </div>
           </div>
         </div>
