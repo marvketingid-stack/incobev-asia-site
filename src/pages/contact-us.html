@@ -34,7 +34,7 @@
         <!-- Channels -->
         <div class="space-y-12 lg:col-span-4">
           <div>
-            <h2 class="mb-10 text-headline-lg">Direct Channels</h2>
+            <h2 class="mb-6 text-headline-lg">Direct Channels</h2>
             <div class="space-y-6">
               <div class="group flex items-start gap-4 rounded-xl border border-outline-variant bg-surface-container-lowest p-6 transition-all hover:border-primary/30">
                 <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-on-primary"><span class="material-symbols-outlined">mail</span></div>
@@ -54,6 +54,8 @@
 
         <!-- Form -->
         <div class="lg:col-span-8" id="contact-form">
+          <!-- Invisible spacer mirrors the "Direct Channels" heading height so the form card top aligns with the first channel box on desktop. -->
+          <div aria-hidden="true" class="invisible mb-6 hidden text-headline-lg lg:block">Direct Channels</div>
           <div class="rounded-3xl border border-outline-variant bg-surface-container-lowest p-8 shadow-sm md:p-12">
             <div class="mb-10">
               <h2 class="mb-4 text-headline-lg">Submit a Request</h2>
