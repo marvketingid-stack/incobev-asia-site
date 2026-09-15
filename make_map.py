@@ -133,9 +133,10 @@ for market in ("thailand", "malaysia", "indonesia", "singapore"):
         inner.append(f'<circle class="sea-region" cx="{sx:.1f}" cy="{sy:.1f}" r="22" fill="#9ecaff" opacity="0.55"/>')
     for m in market_markers[market]:
         inner.append(marker_svg(*m))
+    aria = market_label[market].replace("&", "&amp;")
     groups.append(
         f'<g class="sea-market" data-market="{market}" role="button" tabindex="0" '
-        f'aria-label="{market_label[market]}">{"".join(inner)}</g>'
+        f'aria-label="{aria}">{"".join(inner)}</g>'
     )
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" role="img" aria-label="IncoBev Asia regional footprint across Singapore, Malaysia, Thailand and Indonesia">
