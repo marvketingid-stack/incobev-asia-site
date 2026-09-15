@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers "static assets" deploy for the IncoBev Asia site.
+  // `npm run build` produces ./dist, then `npx wrangler deploy` uploads it as an
+  // assets-only Worker (no server code). _headers/_redirects in dist are honored.
+  "name": "incobev-asia-site",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
