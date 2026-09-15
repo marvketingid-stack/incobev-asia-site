@@ -1,0 +1,5 @@
+# Cloudflare Pages headers (equivalent of the netlify.toml [[headers]] block).
+# Stable asset filenames are updated in place, so they must revalidate rather
+# than be cached immutably.
+/assets/*
+  Cache-Control: public, max-age=0, must-revalidate

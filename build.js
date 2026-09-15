@@ -114,4 +114,10 @@ copyDir(path.join(SRC, 'js'), path.join(DIST, 'assets', 'js'));
 const assetsSrc = path.join(ROOT, 'assets');
 if (fs.existsSync(assetsSrc)) copyDir(assetsSrc, path.join(DIST, 'assets'));
 
+// Copy Cloudflare Pages control files (must sit at the output root) if present.
+for (const f of ['_headers', '_redirects']) {
+  const s = path.join(ROOT, f);
+  if (fs.existsSync(s)) fs.copyFileSync(s, path.join(DIST, f));
+}
+
 console.log(`\nAssembled ${count} pages -> dist/`);
