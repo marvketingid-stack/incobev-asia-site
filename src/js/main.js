@@ -159,4 +159,29 @@
     if (nextBtn) nextBtn.addEventListener('click', function () { step(1); });
     syncArrows();
   });
+
+  /* ---- Interactive regional map (Contact): click a country / pill to reveal one market ---- */
+  var mapWrap = document.getElementById('sea-map-wrap');
+  if (mapWrap) {
+    var mkGroups = [].slice.call(mapWrap.querySelectorAll('.sea-market'));
+    var mkPills = [].slice.call(mapWrap.querySelectorAll('.market-pill'));
+    var mkCards = [].slice.call(mapWrap.querySelectorAll('.market-card'));
+    var selectMarket = function (market) {
+      mapWrap.setAttribute('data-active', market);
+      mkGroups.forEach(function (g) { g.classList.toggle('is-active', g.getAttribute('data-market') === market); });
+      mkPills.forEach(function (p) { p.setAttribute('aria-selected', p.getAttribute('data-market') === market ? 'true' : 'false'); });
+      mkCards.forEach(function (c) { c.classList.toggle('hidden', c.getAttribute('data-market') !== market); });
+    };
+    mkGroups.forEach(function (g) {
+      var m = g.getAttribute('data-market');
+      g.addEventListener('click', function () { selectMarket(m); });
+      g.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectMarket(m); }
+      });
+    });
+    mkPills.forEach(function (p) {
+      p.addEventListener('click', function () { selectMarket(p.getAttribute('data-market')); });
+    });
+    selectMarket(mapWrap.getAttribute('data-active') || 'singapore');
+  }
 })();

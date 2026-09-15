@@ -65,6 +65,14 @@
     @apply text-[26px];
   }
 
+  /* Interactive regional map (Contact) */
+  .market-pill {
+    @apply rounded-full border border-outline-variant bg-surface-container-lowest px-4 py-2 text-label-sm font-bold text-on-surface-variant transition-all hover:border-primary/50 hover:text-primary;
+  }
+  .market-pill[aria-selected='true'] {
+    @apply border-primary bg-primary text-on-primary shadow-sm;
+  }
+
   /* Interactive timeline year markers (About Us) */
   .year-btn {
     @apply relative shrink-0 rounded-full border border-outline-variant bg-surface-container-lowest px-3.5 py-1.5 text-xs font-bold text-on-surface-variant transition-all md:px-5 md:py-2 md:text-label-sm;
@@ -76,6 +84,18 @@
     @apply border-primary bg-primary text-on-primary shadow-md;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Interactive SEA map regions (Contact) — inline SVG, styled outside @layer.
+   Presentation attrs (fill) on the SVG lose to these class rules, so the
+   default #9ecaff comes from the markup and hover/active come from here.
+--------------------------------------------------------------------------- */
+.sea-market { cursor: pointer; }
+.sea-market .sea-region { transition: fill 0.2s ease; }
+.sea-market:hover .sea-region { fill: #62a8f5; }
+.sea-market:focus-visible { outline: none; }
+.sea-market:focus-visible .sea-region,
+.sea-market.is-active .sea-region { fill: #2f6dbd; }
 
 /* ---------------------------------------------------------------------------
    Logo marquee / ticker (Awards & Accolades, Sustainability logo row)
@@ -97,15 +117,22 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-@media (prefers-reduced-motion: reduce) {
+/* On mobile (and when reduced-motion is requested) show every logo at once as a
+   centred, wrapped grid instead of a ticker that only reveals a couple at a time.
+   The duplicate set (aria-hidden) is hidden so each logo appears once. */
+@media (prefers-reduced-motion: reduce), (max-width: 767px) {
   .logo-track {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
+    row-gap: 1.5rem;
   }
   .logo-marquee {
     -webkit-mask-image: none;
     mask-image: none;
+  }
+  .logo-track > [aria-hidden="true"] {
+    display: none;
   }
 }
 

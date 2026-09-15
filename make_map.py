@@ -56,51 +56,92 @@ def country_paths(geom):
     return paths
 
 
-parts = []
+# country polygons keyed by id
+country_d = {}
 for f in d["features"]:
     cid = f["id"]
     if cid not in SHOW:
         continue
-    fill = "#9ecaff" if cid in OPERATING else "#dbe2ec"
     paths = country_paths(f["geometry"])
-    if not paths:
-        continue
-    parts.append(
-        f'<path d="{"".join(paths)}" fill="{fill}" stroke="#ffffff" '
-        f'stroke-width="0.8" stroke-linejoin="round"/>'
-    )
+    if paths:
+        country_d[cid] = "".join(paths)
 
-# Markers: (label, lon, lat, is_hq, label_dx, label_anchor)
-markers = [
-    ("Bangkok", 100.50, 13.75, False, 10, "start"),
-    ("Penang", 100.33, 5.41, False, -10, "end"),
-    ("Kuala Lumpur", 101.69, 3.14, False, 10, "start"),
-    ("Singapore (HQ)", 103.85, 1.29, True, 12, "start"),
-    ("Jakarta", 106.85, -6.20, False, 10, "start"),
-    ("Bali", 115.22, -8.65, False, 10, "start"),
-]
+# Static (non-interactive) context countries.
+context_parts = []
+for cid in CONTEXT:
+    if cid in country_d:
+        context_parts.append(
+            f'<path d="{country_d[cid]}" fill="#dbe2ec" stroke="#ffffff" '
+            f'stroke-width="0.8" stroke-linejoin="round"/>'
+        )
 
-mparts = []
-for label, lon, lat, hq, dx, anchor in markers:
+# Markers grouped by market: (label, lon, lat, is_hq, label_dx, label_anchor)
+market_markers = {
+    "thailand": [("Bangkok", 100.50, 13.75, False, 10, "start")],
+    "malaysia": [
+        ("Penang", 100.33, 5.41, False, -10, "end"),
+        ("Kuala Lumpur", 101.69, 3.14, False, 10, "start"),
+    ],
+    "singapore": [("Singapore (HQ)", 103.85, 1.29, True, 12, "start")],
+    "indonesia": [
+        ("Jakarta", 106.85, -6.20, False, 10, "start"),
+        ("Bali", 115.22, -8.65, False, 10, "start"),
+    ],
+}
+market_country = {"malaysia": "MYS", "thailand": "THA", "indonesia": "IDN"}
+market_label = {
+    "singapore": "Singapore — Regional HQ",
+    "malaysia": "Malaysia — Kuala Lumpur & Penang",
+    "thailand": "Thailand — Bangkok",
+    "indonesia": "Indonesia — Jakarta & Bali",
+}
+
+
+def marker_svg(label, lon, lat, hq, dx, anchor):
     x, y = project(lon, lat)
     r = 7 if hq else 5
     color = "#003861" if hq else "#506075"
+    out = []
     if hq:
-        mparts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="16" fill="#003861" opacity="0.12"/>')
-    mparts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{color}"/>')
-    tx = x + dx
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="16" fill="#003861" opacity="0.12"/>')
+    else:
+        # invisible larger hit target so small city dots are easy to tap
+        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="18" fill="#000" opacity="0"/>')
+    out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{color}"/>')
     weight = "700" if hq else "600"
-    mparts.append(
-        f'<text x="{tx:.1f}" y="{y+4:.1f}" text-anchor="{anchor}" '
+    out.append(
+        f'<text x="{x + dx:.1f}" y="{y + 4:.1f}" text-anchor="{anchor}" '
         f'font-family="\'Plus Jakarta Sans\',sans-serif" font-size="16" '
         f'font-weight="{weight}" fill="#003861" '
         f'stroke="#f8f9fe" stroke-width="3" paint-order="stroke">{label}</text>'
     )
+    return "".join(out)
+
+
+groups = []
+for market in ("thailand", "malaysia", "indonesia", "singapore"):
+    inner = []
+    cid = market_country.get(market)
+    if cid and cid in country_d:
+        inner.append(
+            f'<path class="sea-region" d="{country_d[cid]}" fill="#9ecaff" '
+            f'stroke="#ffffff" stroke-width="0.8" stroke-linejoin="round"/>'
+        )
+    if market == "singapore":
+        # clickable hit halo behind the HQ marker (SG has no polygon at this scale)
+        sx, sy = project(103.85, 1.29)
+        inner.append(f'<circle class="sea-region" cx="{sx:.1f}" cy="{sy:.1f}" r="22" fill="#9ecaff" opacity="0.55"/>')
+    for m in market_markers[market]:
+        inner.append(marker_svg(*m))
+    groups.append(
+        f'<g class="sea-market" data-market="{market}" role="button" tabindex="0" '
+        f'aria-label="{market_label[market]}">{"".join(inner)}</g>'
+    )
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" role="img" aria-label="IncoBev Asia regional footprint across Singapore, Malaysia, Thailand and Indonesia">
   <rect x="0" y="0" width="{W:.0f}" height="{H:.0f}" fill="#eef3fa"/>
-  {''.join(parts)}
-  {''.join(mparts)}
+  {''.join(context_parts)}
+  {''.join(groups)}
 </svg>
 '''
 
