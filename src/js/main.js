@@ -185,6 +185,32 @@
     selectMarket(mapWrap.getAttribute('data-active') || 'singapore');
   }
 
+  /* ---- Homepage regional footprint: tap a country / office to highlight one market ---- */
+  var fp = document.getElementById('footprint');
+  if (fp) {
+    var fpGroups = [].slice.call(fp.querySelectorAll('.sea-market'));
+    var fpCards = [].slice.call(fp.querySelectorAll('.fp-card'));
+    var fpActive = null;
+    var fpSet = function (m) {
+      fpActive = (fpActive === m) ? null : m; // tapping the active market again clears it
+      fpGroups.forEach(function (g) { g.classList.toggle('is-active', !!fpActive && g.getAttribute('data-market') === fpActive); });
+      fpCards.forEach(function (c) {
+        var match = c.getAttribute('data-market') === fpActive;
+        c.classList.toggle('is-focus', !!fpActive && match);
+        c.classList.toggle('is-dim', !!fpActive && !match);
+      });
+    };
+    var wire = function (el) {
+      var m = el.getAttribute('data-market');
+      el.addEventListener('click', function () { fpSet(m); });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fpSet(m); }
+      });
+    };
+    fpGroups.forEach(wire);
+    fpCards.forEach(wire);
+  }
+
   /* ---- History year carousels (About Us): prev/next + year pills + swipe ---- */
   document.querySelectorAll('[data-carousel]').forEach(function (car) {
     var track = car.querySelector('.car-track');

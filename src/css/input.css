@@ -100,6 +100,12 @@
 --------------------------------------------------------------------------- */
 .sea-market { cursor: pointer; }
 .sea-market .sea-region { transition: fill 0.2s ease; }
+
+/* Homepage footprint: office cards dim/highlight when a market is selected.
+   Raw CSS (toggled by JS) so the states are not purged. */
+.fp-card { transition: opacity 0.2s ease, box-shadow 0.2s ease; }
+.fp-card.is-dim { opacity: 0.4; }
+.fp-card.is-focus { box-shadow: 0 0 0 2px #003861; }
 .sea-market:hover .sea-region { fill: #62a8f5; }
 .sea-market:focus-visible { outline: none; }
 .sea-market:focus-visible .sea-region,
