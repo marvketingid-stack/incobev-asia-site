@@ -139,6 +139,9 @@
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
+    /* Override the base `width: max-content` so the row actually wraps within
+       the container instead of staying one long clipped line. */
+    width: 100%;
     row-gap: 1.5rem;
   }
   .logo-marquee {
@@ -147,6 +150,12 @@
   }
   .logo-track > [aria-hidden="true"] {
     display: none;
+  }
+  /* Two logos per row (a tidy 2×3 grid) instead of one long clipped line. */
+  .logo-track > div {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 40%;
   }
 }
 
