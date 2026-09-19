@@ -68,77 +68,277 @@
     </div>
   </section>
 
-  <!-- Interactive company timeline (4 eras → visual + logos + text per era; ref: coca-colacompany.com history) -->
+  <!-- Our Journey / History — two-level: period tabs > per-year carousel (client brief 17 Sep) -->
   <section class="section !pt-16 md:!pt-24 bg-surface">
     <div class="container-page reveal">
       <div class="mb-10 text-center">
         <h2 class="mb-3 text-headline-xl">Our <span class="text-primary">Journey</span></h2>
-        <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">60 years of growth &amp; partnership — select from the timeline below to explore that chapter of our journey.</p>
+        <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">Six decades of growth &amp; partnership — pick a period, then move through the years within it.</p>
       </div>
-      <div id="timeline" data-tabs>
-        <div class="mb-10 flex items-center gap-2">
-          <button type="button" class="tab-prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30 md:hidden" aria-label="Previous era"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
-          <div role="tablist" aria-label="Company timeline" class="relative flex flex-1 gap-2 overflow-x-auto pb-3 md:gap-3 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div id="history" data-tabs>
+        <div class="mb-10 flex items-center justify-center">
+          <div role="tablist" aria-label="Company history periods" class="relative flex gap-2 overflow-x-auto pb-3 md:gap-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <span class="absolute left-4 right-4 top-1/2 -z-10 hidden h-0.5 -translate-y-1/2 bg-outline-variant md:block"></span>
-            <button role="tab" data-tab="e1" aria-selected="true" tabindex="0" class="year-btn">1963 – 1991</button>
-            <button role="tab" data-tab="e2" aria-selected="false" tabindex="-1" class="year-btn">1994 – 2012</button>
-            <button role="tab" data-tab="e3" aria-selected="false" tabindex="-1" class="year-btn">2017 – 2022</button>
-            <button role="tab" data-tab="e4" aria-selected="false" tabindex="-1" class="year-btn">2024 – 2026</button>
+            <button role="tab" data-tab="p1" aria-selected="true" tabindex="0" class="year-btn">1963 – 1991</button>
+            <button role="tab" data-tab="p2" aria-selected="false" tabindex="-1" class="year-btn">1994 – 2019</button>
+            <button role="tab" data-tab="p3" aria-selected="false" tabindex="-1" class="year-btn">2021 – 2026</button>
           </div>
-          <button type="button" class="tab-next flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30 md:hidden" aria-label="Next era"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
         </div>
 
-        <!-- Era 1 -->
-        <div class="pillar-panel" data-panel="e1">
-          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
-            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-1963.jpg" alt="1963–1991 — Origins" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
-            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
-              <span class="text-label-sm uppercase tracking-widest text-secondary">1963 – 1991 — Origins</span>
-              <h3 class="text-headline-lg">From Consumer Coffee to Coffee Expertise</h3>
-              <p class="text-body-md text-on-surface-variant">The Group began operations in Southeast Asia in 1963. Over the following decades, Suzuki introduced Japanese gourmet coffee to Singapore, established its coffee roastery in Ang Mo Kio, and was appointed Franke distributor in Singapore.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
+        <div class="pillar-panel" data-panel="p1">
+          <!-- Period header card (image + label + headline; no paragraph) -->
+          <div class="relative mb-8 flex min-h-[200px] items-end overflow-hidden rounded-2xl md:min-h-[260px]">
+            <img src="assets/images/history/p1-header.jpg" alt="1963 – 1991" class="absolute inset-0 h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/45 to-transparent"></div>
+            <div class="relative z-10 p-6 text-surface-bright md:p-8">
+              <span class="text-label-sm uppercase tracking-widest text-secondary-fixed">1963 – 1991</span>
+              <h3 class="mt-1 text-headline-lg">From Consumer Coffee to Coffee Expertise</h3>
+            </div>
+          </div>
+
+          <!-- Individual-year carousel -->
+          <div class="hist-carousel" data-carousel>
+            <div class="mb-6 flex items-center gap-2">
+              <button type="button" class="car-prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Previous year"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+              <div class="car-dots flex flex-1 gap-2 overflow-x-auto pb-2 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Years in 1963 – 1991"><button type="button" class="year-pill" data-idx="0" aria-current="true" aria-label="Show 1963">1963</button><button type="button" class="year-pill" data-idx="1" aria-current="false" aria-label="Show 1979">1979</button><button type="button" class="year-pill" data-idx="2" aria-current="false" aria-label="Show 1981">1981</button><button type="button" class="year-pill" data-idx="3" aria-current="false" aria-label="Show 1991">1991</button></div>
+              <button type="button" class="car-next flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Next year"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+            </div>
+            <div class="car-viewport overflow-hidden">
+              <div class="car-track flex transition-transform duration-300 ease-out">
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1963.jpg" alt="1963 — Group begins operations in Southeast Asia" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1963</span>
+                <h4 class="text-headline-md">Group begins operations in Southeast Asia</h4>
+                <p class="text-body-md text-on-surface-variant">The origins of the Group trace back to 1963, when the business first began operating within Southeast Asia’s consumer beverage industry.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1979.jpg" alt="1979 — Established Suzuki Cafe" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1979</span>
+                <h4 class="text-headline-md">Established Suzuki Cafe</h4>
+                <p class="text-body-md text-on-surface-variant">Introduced the first Japanese gourmet coffee to Singapore, with the first shop established in Bukit Timah, Singapore.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/suzuki.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1981.jpg" alt="1981 — Established Suzuki Coffee Roastery" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1981</span>
+                <h4 class="text-headline-md">Established Suzuki Coffee Roastery</h4>
+                <p class="text-body-md text-on-surface-variant">As demand for high-quality coffee experiences increased, Suzuki expanded its operations and introduced a roastery in Ang Mo Kio, Singapore.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/suzuki.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1991.jpg" alt="1991 — Appointed Franke distributor in Singapore" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1991</span>
+                <h4 class="text-headline-md">Appointed Franke distributor in Singapore</h4>
+                <p class="text-body-md text-on-surface-variant">As hospitality standards evolved, the business identified an opportunity to transform how beverages were served within HoReCa environments across Southeast Asia.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/franke.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Era 2 -->
-        <div class="pillar-panel hidden" data-panel="e2">
-          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
-            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-1994.jpg" alt="1994–2012 — Group Foundation" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
-            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
-              <span class="text-label-sm uppercase tracking-widest text-secondary">1994 – 2012 — Regional Expansion</span>
-              <h3 class="text-headline-lg">Building a Regional Beverage Group</h3>
-              <p class="text-body-md text-on-surface-variant">Fieber Tradings was established in Singapore in 1994, followed by Suzuki Coffee’s expansion into a larger roastery and Malaysia. Kaffa Kaldi Singapore later joined the Group, alongside the exclusive appointment of Schaerer in Singapore.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/fieber.png" alt="Fieber Tradings" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/kaffa-kaldi.png" alt="Kaffa Kaldi" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
+        <div class="pillar-panel hidden" data-panel="p2">
+          <!-- Period header card (image + label + headline; no paragraph) -->
+          <div class="relative mb-8 flex min-h-[200px] items-end overflow-hidden rounded-2xl md:min-h-[260px]">
+            <img src="assets/images/history/p2-header.jpg" alt="1994 – 2019" class="absolute inset-0 h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/45 to-transparent"></div>
+            <div class="relative z-10 p-6 text-surface-bright md:p-8">
+              <span class="text-label-sm uppercase tracking-widest text-secondary-fixed">1994 – 2019</span>
+              <h3 class="mt-1 text-headline-lg">Building a Regional Beverage Group</h3>
+            </div>
+          </div>
+
+          <!-- Individual-year carousel -->
+          <div class="hist-carousel" data-carousel>
+            <div class="mb-6 flex items-center gap-2">
+              <button type="button" class="car-prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Previous year"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+              <div class="car-dots flex flex-1 gap-2 overflow-x-auto pb-2 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Years in 1994 – 2019"><button type="button" class="year-pill" data-idx="0" aria-current="true" aria-label="Show 1994">1994</button><button type="button" class="year-pill" data-idx="1" aria-current="false" aria-label="Show 1995">1995</button><button type="button" class="year-pill" data-idx="2" aria-current="false" aria-label="Show 2005">2005</button><button type="button" class="year-pill" data-idx="3" aria-current="false" aria-label="Show 2008">2008</button><button type="button" class="year-pill" data-idx="4" aria-current="false" aria-label="Show 2010">2010</button><button type="button" class="year-pill" data-idx="5" aria-current="false" aria-label="Show 2017">2017</button><button type="button" class="year-pill" data-idx="6" aria-current="false" aria-label="Show 2019">2019</button></div>
+              <button type="button" class="car-next flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Next year"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+            </div>
+            <div class="car-viewport overflow-hidden">
+              <div class="car-track flex transition-transform duration-300 ease-out">
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1994.jpg" alt="1994 — Founded FT Holdings in Singapore" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1994</span>
+                <h4 class="text-headline-md">Founded FT Holdings in Singapore</h4>
+                <p class="text-body-md text-on-surface-variant">At a time when premium coffee solutions and advanced beverage equipment were still relatively uncommon, Fieber Tradings was established to help businesses elevate their beverage programs.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/fieber.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y1995.jpg" alt="1995 — Suzuki joins IncoBev Asia Group and expanded operations" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">1995</span>
+                <h4 class="text-headline-md">Suzuki joins IncoBev Asia Group and expanded operations</h4>
+                <p class="text-body-md text-on-surface-variant">Suzuki Coffee moved into its permanent 55,000 sq. ft. roastery at Chin Bee Avenue, enabling larger-scale production and reinforcing its position as a market leader.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/suzuki.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2005.jpg" alt="2005 — Expanded operations into Malaysia" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2005</span>
+                <h4 class="text-headline-md">Expanded operations into Malaysia</h4>
+                <p class="text-body-md text-on-surface-variant">Suzuki Coffee continues to expand operations to meet rising demand of gourmet coffee across Southeast Asia growing tourism.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2008.jpg" alt="2008 — Kaffa Kaldi Singapore joins IncoBev Asia Group" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2008</span>
+                <h4 class="text-headline-md">Kaffa Kaldi Singapore joins IncoBev Asia Group</h4>
+                <p class="text-body-md text-on-surface-variant">Leading premier supplier of comprehensive beverage solutions in Singapore joins IncoBev Asia Group.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/kaffa-kaldi.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2010.jpg" alt="2010 — Appointed Schaerer distributor in Singapore" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2010</span>
+                <h4 class="text-headline-md">Appointed Schaerer distributor in Singapore</h4>
+                <p class="text-body-md text-on-surface-variant">Technical excellence in Swiss-engineered commercial coffee equipment.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/schaerer.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2017.jpg" alt="2017 — Expanded operations into Indonesia through PT Ambrosius Utama (PMA)" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2017</span>
+                <h4 class="text-headline-md">Expanded operations into Indonesia through PT Ambrosius Utama (PMA)</h4>
+                <p class="text-body-md text-on-surface-variant">Entered Indonesian market to capture growing HORECA opportunity.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/pt-ambrosius.svg" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2019.jpg" alt="2019 — Restructure of IncoBev Asia" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2019</span>
+                <h4 class="text-headline-md">Restructure of IncoBev Asia</h4>
+                <p class="text-body-md text-on-surface-variant">Restructuring Fieber Tradings into IncoBev Asia as the regional holding company, consolidating and overseeing all brand portfolios, business units, and strategic investments across SEA.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/incobev-logo.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Era 3 -->
-        <div class="pillar-panel hidden" data-panel="e3">
-          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
-            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-2017.jpg" alt="2017–2022 — Premium Expansion" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
-            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
-              <span class="text-label-sm uppercase tracking-widest text-secondary">2017 – 2022 — Regional &amp; Portfolio Growth</span>
-              <h3 class="text-headline-lg">Expanding Our Regional &amp; Brand Portfolio</h3>
-              <p class="text-body-md text-on-surface-variant">The Group expanded into Indonesia through PT Ambrosius Utama and strengthened its premium portfolio with brands including La Marzocco, Robert Timms and Zummo.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/pt-ambrosius.svg" alt="PT Ambrosius Utama" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/robert-timms.png" alt="Robert Timms" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/zummo.png" alt="Zummo" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
+        <div class="pillar-panel hidden" data-panel="p3">
+          <!-- Period header card (image + label + headline; no paragraph) -->
+          <div class="relative mb-8 flex min-h-[200px] items-end overflow-hidden rounded-2xl md:min-h-[260px]">
+            <img src="assets/images/history/p3-header.jpg" alt="2021 – 2026" class="absolute inset-0 h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/45 to-transparent"></div>
+            <div class="relative z-10 p-6 text-surface-bright md:p-8">
+              <span class="text-label-sm uppercase tracking-widest text-secondary-fixed">2021 – 2026</span>
+              <h3 class="mt-1 text-headline-lg">Strengthening Our Regional Platform</h3>
             </div>
           </div>
-        </div>
 
-        <!-- Era 4 -->
-        <div class="pillar-panel hidden" data-panel="e4">
-          <div class="grid grid-cols-1 overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest lg:grid-cols-2">
-            <div class="relative min-h-[240px] lg:min-h-[420px]"><img src="assets/images/tl-2024.jpg" alt="2024–2026 — IncoBev Asia" class="h-full w-full object-cover lg:absolute lg:inset-0"></div>
-            <div class="flex flex-col justify-center gap-4 p-8 lg:p-12">
-              <span class="text-label-sm uppercase tracking-widest text-secondary">2024 – 2026 — The Next Chapter</span>
-              <h3 class="text-headline-lg">Strengthening Our Regional Platform</h3>
-              <p class="text-body-md text-on-surface-variant">The Group continued to strengthen its regional beverage ecosystem with the appointment of Sanremo and the expansion of its HORECA business in Thailand under IncoBev Thailand.</p>
-              <div class="mt-2 flex flex-wrap items-center gap-x-8 gap-y-4"><img src="assets/logos/incobev-thailand.png" alt="IncoBev Thailand" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"><img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" class="h-9 max-w-[124px] w-auto object-contain md:h-10 md:max-w-[150px]"></div>
+          <!-- Individual-year carousel -->
+          <div class="hist-carousel" data-carousel>
+            <div class="mb-6 flex items-center gap-2">
+              <button type="button" class="car-prev flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Previous year"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+              <div class="car-dots flex flex-1 gap-2 overflow-x-auto pb-2 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Years in 2021 – 2026"><button type="button" class="year-pill" data-idx="0" aria-current="true" aria-label="Show 2021">2021</button><button type="button" class="year-pill" data-idx="1" aria-current="false" aria-label="Show 2022">2022</button><button type="button" class="year-pill" data-idx="2" aria-current="false" aria-label="Show 2024">2024</button><button type="button" class="year-pill" data-idx="3" aria-current="false" aria-label="Show 2025">2025</button><button type="button" class="year-pill" data-idx="4" aria-current="false" aria-label="Show 2026">2026</button></div>
+              <button type="button" class="car-next flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-outline-variant bg-surface-container-lowest text-primary transition hover:bg-primary/5 disabled:cursor-not-allowed disabled:opacity-30" aria-label="Next year"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+            </div>
+            <div class="car-viewport overflow-hidden">
+              <div class="car-track flex transition-transform duration-300 ease-out">
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2021.jpg" alt="2021 — Appointed La San Marco Distributor; Official licensee for Robert Timms Professional Coffee" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2021</span>
+                <h4 class="text-headline-md">Appointed La San Marco Distributor; Official licensee for Robert Timms Professional Coffee</h4>
+                <p class="text-body-md text-on-surface-variant">Strengthening our coffee ecosystem by roasting Australian coffee brands in our Singapore headquarters for the Southeast Asian market.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/la-san-marco.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"><img src="assets/logos/robert-timms.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2022.jpg" alt="2022 — Appointed Zummo and La Marzocco distributor" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2022</span>
+                <h4 class="text-headline-md">Appointed Zummo and La Marzocco distributor</h4>
+                <p class="text-body-md text-on-surface-variant">Premium espresso equipment and fresh juice extraction systems.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/zummo.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"><img src="assets/logos/la-marzocco.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2024.jpg" alt="2024 — Appointed San Remo distributor" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2024</span>
+                <h4 class="text-headline-md">Appointed San Remo distributor</h4>
+                <p class="text-body-md text-on-surface-variant">Italian excellence in commercial espresso machines.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/sanremo.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2025.jpg" alt="2025 — Expanded HORECA Division in Thailand under IncoBev Thailand" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2025</span>
+                <h4 class="text-headline-md">Expanded HORECA Division in Thailand under IncoBev Thailand</h4>
+                <p class="text-body-md text-on-surface-variant">Launched dedicated HORECA Division in Thailand to focus exclusively on hotels and work spaces.</p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3"><img src="assets/logos/incobev-thailand.png" alt="" class="h-8 max-w-[120px] w-auto object-contain"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hist-slide w-full shrink-0">
+            <div class="grid grid-cols-1 items-stretch overflow-hidden rounded-2xl border border-outline-variant bg-surface-container-lowest md:grid-cols-2">
+              <div class="relative min-h-[220px] md:min-h-[380px]"><img src="assets/images/history/y2026.jpg" alt="2026 — Appointed Nuova Simonelli distributor" class="h-full w-full object-cover md:absolute md:inset-0" loading="lazy"></div>
+              <div class="flex flex-col justify-center gap-4 p-6 md:p-10">
+                <span class="w-fit rounded-full bg-secondary-container px-3 py-1 text-label-sm font-bold text-on-secondary-container">2026</span>
+                <h4 class="text-headline-md">Appointed Nuova Simonelli distributor</h4>
+                <p class="text-body-md text-on-surface-variant">Innovative professional espresso machines that combine advanced coffee technology with intuitive, user-friendly design.</p>
+              </div>
+            </div>
+          </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Continued Excellence -->
+      <div class="reveal mt-12 overflow-hidden rounded-2xl bg-primary p-8 text-on-primary md:mt-16 md:p-12">
+        <span class="text-label-sm uppercase tracking-widest text-secondary-fixed">Continued Excellence</span>
+        <p class="mt-3 max-w-3xl text-headline-md">Over the decades, the company expanded both organically and through strategic acquisitions and partnerships, building a strong regional ecosystem.</p>
+        <p class="mt-4 max-w-3xl text-body-lg text-on-primary/85">Today, IncoBev Asia serves as a trusted regional beverage partner supporting businesses across multiple industries throughout Southeast Asia.</p>
       </div>
     </div>
   </section>

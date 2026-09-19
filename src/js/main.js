@@ -184,4 +184,57 @@
     });
     selectMarket(mapWrap.getAttribute('data-active') || 'singapore');
   }
+
+  /* ---- History year carousels (About Us): prev/next + year pills + swipe ---- */
+  document.querySelectorAll('[data-carousel]').forEach(function (car) {
+    var track = car.querySelector('.car-track');
+    var viewport = car.querySelector('.car-viewport');
+    var slides = [].slice.call(car.querySelectorAll('.hist-slide'));
+    var dots = [].slice.call(car.querySelectorAll('.year-pill'));
+    var prevBtn = car.querySelector('.car-prev');
+    var nextBtn = car.querySelector('.car-next');
+    if (!track || !viewport || slides.length === 0) return;
+    var idx = 0;
+    function render() {
+      // Percentage transform (relative to the track box = one viewport width),
+      // so it needs no width measurement and works even before layout/compositing.
+      track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+      dots.forEach(function (d, i) { d.setAttribute('aria-current', i === idx ? 'true' : 'false'); });
+      if (prevBtn) prevBtn.disabled = idx <= 0;
+      if (nextBtn) nextBtn.disabled = idx >= slides.length - 1;
+      if (dots[idx]) dots[idx].scrollIntoView({ inline: 'center', block: 'nearest' });
+    }
+    function go(i) {
+      var n = Math.max(0, Math.min(slides.length - 1, i));
+      if (n === idx) return;
+      idx = n;
+      render();
+    }
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { go(i); });
+      d.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); if (dots[idx]) dots[idx].focus(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); if (dots[idx]) dots[idx].focus(); }
+      });
+    });
+    if (prevBtn) prevBtn.addEventListener('click', function () { go(idx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { go(idx + 1); });
+    // Touch swipe (threshold based; no live-follow to stay smooth).
+    var startX = 0, startY = 0, dx = 0, dragging = false;
+    viewport.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY; dx = 0; dragging = true;
+    }, { passive: true });
+    viewport.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      dx = e.touches[0].clientX - startX;
+    }, { passive: true });
+    viewport.addEventListener('touchend', function () {
+      if (!dragging) return;
+      dragging = false;
+      if (Math.abs(dx) > 45) { go(dx < 0 ? idx + 1 : idx - 1); }
+    });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(render, 120); });
+    render();
+  });
 })();
