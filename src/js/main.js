@@ -211,6 +211,43 @@
     fpCards.forEach(wire);
   }
 
+  /* ---- Logo ticker (Awards/Certs): auto-scrolls left + user can swipe/drag ---- */
+  document.querySelectorAll('.logo-marquee').forEach(function (mq) {
+    var track = mq.querySelector('.logo-track');
+    if (!track) return;
+    var speed = 0.5;         // px per frame (~30px/s at 60fps), matches the old CSS pace
+    var pos = 0;
+    var paused = false;
+    var resumeTimer;
+    function half() { return track.scrollWidth / 2; } // set B duplicates set A
+    function pause() { paused = true; clearTimeout(resumeTimer); }
+    function scheduleResume(delay) {
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function () { pos = mq.scrollLeft; paused = false; }, delay);
+    }
+    // Desktop: pause on hover.
+    mq.addEventListener('mouseenter', pause);
+    mq.addEventListener('mouseleave', function () { scheduleResume(300); });
+    // Touch / drag: pause while interacting, resume shortly after.
+    ['pointerdown', 'touchstart'].forEach(function (ev) { mq.addEventListener(ev, pause, { passive: true }); });
+    ['pointerup', 'touchend', 'touchcancel'].forEach(function (ev) { mq.addEventListener(ev, function () { scheduleResume(2000); }, { passive: true }); });
+    mq.addEventListener('wheel', function () { pause(); scheduleResume(2000); }, { passive: true });
+    // Keep pos synced while the user free-scrolls so auto-scroll resumes smoothly.
+    mq.addEventListener('scroll', function () { if (paused) pos = mq.scrollLeft; }, { passive: true });
+    // Respect reduced-motion: no auto-scroll, but the row stays swipeable.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function tick() {
+      if (!paused) {
+        pos += speed;
+        var h = half();
+        if (h > 0 && pos >= h) pos -= h; // seamless loop (content repeats every half)
+        mq.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+
   /* ---- History year carousels (About Us): prev/next + year pills + swipe ---- */
   document.querySelectorAll('[data-carousel]').forEach(function (car) {
     var track = car.querySelector('.car-track');

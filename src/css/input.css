@@ -114,49 +114,22 @@
 /* ---------------------------------------------------------------------------
    Logo marquee / ticker (Awards & Accolades, Sustainability logo row)
 --------------------------------------------------------------------------- */
+/* Scroll-based ticker: auto-scrolls left via JS (main.js) AND is natively
+   swipeable/draggable on touch + desktop. The logo set is duplicated in the
+   markup, so JS can loop seamlessly by wrapping scrollLeft at the halfway mark.
+   Identical behaviour on mobile and desktop. */
 .logo-marquee {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;   /* IE/Edge */
+  scrollbar-width: none;      /* Firefox */
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
+.logo-marquee::-webkit-scrollbar { display: none; }  /* Chrome/Safari */
 .logo-track {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
-}
-.logo-marquee:hover .logo-track {
-  animation-play-state: paused;
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-/* On mobile (and when reduced-motion is requested) show every logo at once as a
-   centred, wrapped grid instead of a ticker that only reveals a couple at a time.
-   The duplicate set (aria-hidden) is hidden so each logo appears once. */
-@media (prefers-reduced-motion: reduce), (max-width: 767px) {
-  .logo-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* Override the base `width: max-content` so the row actually wraps within
-       the container instead of staying one long clipped line. */
-    width: 100%;
-    row-gap: 1.5rem;
-  }
-  .logo-marquee {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-  .logo-track > [aria-hidden="true"] {
-    display: none;
-  }
-  /* Two logos per row (a tidy 2×3 grid) instead of one long clipped line. */
-  .logo-track > div {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    width: 40%;
-  }
 }
 
 /* ---------------------------------------------------------------------------
