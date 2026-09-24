@@ -77,8 +77,10 @@
   .year-pill {
     @apply shrink-0 rounded-full border border-outline-variant bg-surface-container-lowest px-3.5 py-1.5 text-xs font-bold text-on-surface-variant transition-all hover:border-primary/50 hover:text-primary md:px-4 md:text-label-sm;
   }
+  /* Year pills (2nd level) use a lighter accent chip so they read distinctly
+     from the solid-navy period tabs (1st level) above them. */
   .year-pill[aria-current='true'] {
-    @apply border-primary bg-primary text-on-primary shadow-sm hover:text-on-primary;
+    @apply border-secondary-fixed-dim bg-secondary-container text-on-secondary-fixed shadow-sm hover:text-on-secondary-fixed;
   }
 
   /* Interactive timeline year markers (About Us) */
