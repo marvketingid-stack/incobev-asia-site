@@ -26,78 +26,135 @@
   <!-- Brand Portfolio -->
   <section class="section !pt-14 md:!pt-16" id="portfolio">
     <div class="container-page reveal">
-      <div class="mb-10 max-w-2xl md:mb-12">
+      <div class="mb-8 max-w-2xl md:mb-10">
         <h2 class="mb-6 text-headline-xl">Our Brand Portfolio</h2>
         <p class="text-body-md text-on-surface-variant">A curated selection of leading international and regional brands, distributed and supported by IncoBev Asia across Southeast Asia.</p>
       </div>
 
-      <div class="reveal mb-14">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">coffee_maker</span> Coffee Machine Solutions</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/schaerer.png" alt="Schaerer" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/sanremo.png" alt="Sanremo" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/franke.png" alt="Franke" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/la-san-marco.png" alt="La San Marco" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/nuova-simonelli.jpg" alt="Nuova Simonelli" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/zummo.png" alt="Zummo" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/bravilor.png" alt="Bravilor Bonamat" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/fiorenzato.png" alt="Fiorenzato" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/kaffapro.png" alt="KaffaPro" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/bunn.png" alt="BUNN" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cino.jpg" alt="Cino" class="h-14 w-full object-contain"></div>
-        </div>
+      <!-- Filter bar: jump to one category or view all (client 28 Sep, slide 10 —
+           Option B editorial bands with an Option A filter on top). -->
+      <div class="mb-10 flex flex-wrap gap-2 md:gap-3" data-brand-filter role="group" aria-label="Filter brands by category">
+        <button type="button" class="brand-chip" data-cat="all" aria-pressed="true"><span class="material-symbols-outlined">apps</span> All</button>
+        <button type="button" class="brand-chip" data-cat="machines" aria-pressed="false"><span class="material-symbols-outlined">coffee_maker</span> Coffee Machines</button>
+        <button type="button" class="brand-chip" data-cat="coffee" aria-pressed="false"><span class="material-symbols-outlined">local_cafe</span> Coffee</button>
+        <button type="button" class="brand-chip" data-cat="tea" aria-pressed="false"><span class="material-symbols-outlined">emoji_food_beverage</span> Tea</button>
+        <button type="button" class="brand-chip" data-cat="mixes" aria-pressed="false"><span class="material-symbols-outlined">blender</span> Mixes &amp; Syrups</button>
+        <button type="button" class="brand-chip" data-cat="tools" aria-pressed="false"><span class="material-symbols-outlined">cleaning_services</span> Barista Tools</button>
+        <button type="button" class="brand-chip" data-cat="others" aria-pressed="false"><span class="material-symbols-outlined">category</span> Others</button>
       </div>
 
-      <div class="reveal mb-14">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">local_cafe</span> Coffee</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/robert-timms.png" alt="Robert Timms" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/goodman.png" alt="Goodman" class="h-14 w-full object-contain"></div>
+      <!-- Editorial category bands: each has a titled label column + logo row. -->
+      <div class="space-y-6">
+        <div class="brand-band" data-cat="machines">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">coffee_maker</span></span>
+              <h3 class="mb-2 text-headline-md">Coffee Machine Solutions</h3>
+              <p class="text-body-md text-on-surface-variant">Commercial espresso, bean-to-cup and juicing systems from the world's leading engineers.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">12 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/schaerer.png" alt="Schaerer" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/sanremo.png" alt="Sanremo" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/la-marzocco.png" alt="La Marzocco" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/franke.png" alt="Franke" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/la-san-marco.png" alt="La San Marco" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/nuova-simonelli.jpg" alt="Nuova Simonelli" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/zummo.png" alt="Zummo" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/bravilor.png" alt="Bravilor Bonamat" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/fiorenzato.png" alt="Fiorenzato" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/kaffapro.png" alt="KaffaPro" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/bunn.png" alt="BUNN" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cino.jpg" alt="Cino" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="reveal mb-14">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">emoji_food_beverage</span> Tea</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/metz-tea.png" alt="Metz Luxury Tea" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/m21.jpg" alt="M21 Luxury Tea" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/twinkle.png" alt="Twinkle" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/gifel-tea.png" alt="Gifel" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/tea-forte.png" alt="Tea Forte" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/mist-valley.png" alt="Mist Valley" class="h-14 w-full object-contain"></div>
+        <div class="brand-band" data-cat="coffee">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">local_cafe</span></span>
+              <h3 class="mb-2 text-headline-md">Coffee</h3>
+              <p class="text-body-md text-on-surface-variant">Roasted and green coffee brands, including our own Suzuki Coffee heritage.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">3 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/robert-timms.png" alt="Robert Timms" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/goodman.png" alt="Goodman" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="reveal mb-14">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">blender</span> Mixes &amp; Syrups</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/kaffamix.png" alt="Kaffa Mix" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/ildoge.png" alt="Il Doge" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/farmhouse.jpg" alt="Farmhouse" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/oatbedient.jpg" alt="Oatbedient" class="h-14 w-full object-contain"></div>
+        <div class="brand-band" data-cat="tea">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">emoji_food_beverage</span></span>
+              <h3 class="mb-2 text-headline-md">Tea</h3>
+              <p class="text-body-md text-on-surface-variant">Luxury and everyday tea labels for hospitality and retail.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">6 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/metz-tea.png" alt="Metz Luxury Tea" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/m21.jpg" alt="M21 Luxury Tea" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/twinkle.png" alt="Twinkle" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/gifel-tea.png" alt="Gifel" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/tea-forte.png" alt="Tea Forte" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/mist-valley.png" alt="Mist Valley" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="reveal mb-14">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">cleaning_services</span> Barista Tool &amp; Cleaning Items</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/hario.png" alt="Hario" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cafetto.png" alt="Cafetto" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/zerohero.png" alt="ZeroHero" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cinoart.jpg" alt="CinoArt" class="h-14 w-full object-contain"></div>
+        <div class="brand-band" data-cat="mixes">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">blender</span></span>
+              <h3 class="mb-2 text-headline-md">Mixes &amp; Syrups</h3>
+              <p class="text-body-md text-on-surface-variant">Powders, bases and syrups that make signature drinks repeatable at scale.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">4 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/kaffamix.png" alt="Kaffa Mix" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/ildoge.png" alt="Il Doge" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/farmhouse.jpg" alt="Farmhouse" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/oatbedient.jpg" alt="Oatbedient" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="reveal">
-        <h3 class="mb-8 flex items-center gap-3 text-headline-md"><span class="material-symbols-outlined text-primary">category</span> Others</h3>
-        <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/indocafe.jpg" alt="Indocafé" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/vico.jpg" alt="Vico" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/maxtea.png" alt="MaxTea" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/maxcreamer.jpg" alt="MaxCreamer" class="h-14 w-full object-contain"></div>
-          <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/jj-drinks.png" alt="JJ Drinks" class="h-14 w-full object-contain"></div>
+        <div class="brand-band" data-cat="tools">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">cleaning_services</span></span>
+              <h3 class="mb-2 text-headline-md">Barista Tool &amp; Cleaning Items</h3>
+              <p class="text-body-md text-on-surface-variant">Precision tools and cleaning products that keep quality and equipment in top form.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">4 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/hario.png" alt="Hario" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cafetto.png" alt="Cafetto" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/zerohero.png" alt="ZeroHero" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/cinoart.jpg" alt="CinoArt" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-band" data-cat="others">
+          <div class="grid items-start gap-6 rounded-3xl border border-outline-variant bg-surface-container-lowest p-6 md:grid-cols-[240px_1fr] md:gap-10 md:p-8">
+            <div>
+              <span class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"><span class="material-symbols-outlined text-[26px]">category</span></span>
+              <h3 class="mb-2 text-headline-md">Others</h3>
+              <p class="text-body-md text-on-surface-variant">Complementary FMCG beverage brands across the region.</p>
+              <span class="mt-4 inline-block text-label-sm font-bold uppercase tracking-wider text-primary">5 brands</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/indocafe.jpg" alt="Indocafé" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/vico.jpg" alt="Vico" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/maxtea.png" alt="MaxTea" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/maxcreamer.jpg" alt="MaxCreamer" class="h-14 w-full object-contain"></div>
+              <div class="card flex items-center justify-center p-6 transition-all hover:-translate-y-1 hover:shadow-lg"><img src="assets/logos/jj-drinks.png" alt="JJ Drinks" class="h-14 w-full object-contain"></div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -160,6 +160,23 @@
     syncArrows();
   });
 
+  /* ---- Our Brands portfolio filter: chips show one category band or all ---- */
+  document.querySelectorAll('[data-brand-filter]').forEach(function (bar) {
+    var chips = [].slice.call(bar.querySelectorAll('.brand-chip'));
+    var bands = [].slice.call(document.querySelectorAll('.brand-band'));
+    function apply(cat) {
+      chips.forEach(function (c) {
+        c.setAttribute('aria-pressed', c.getAttribute('data-cat') === cat ? 'true' : 'false');
+      });
+      bands.forEach(function (b) {
+        b.classList.toggle('hidden', cat !== 'all' && b.getAttribute('data-cat') !== cat);
+      });
+    }
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () { apply(c.getAttribute('data-cat')); });
+    });
+  });
+
   /* ---- Interactive regional map (Contact): click a country / pill to reveal one market ---- */
   var mapWrap = document.getElementById('sea-map-wrap');
   if (mapWrap) {
