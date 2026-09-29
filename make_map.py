@@ -81,10 +81,12 @@ market_markers = {
     "malaysia": [
         ("Penang", 100.33, 5.41, False, -10, "end"),
         ("Kuala Lumpur", 101.69, 3.14, False, 10, "start"),
+        ("Kota Kinabalu", 116.07, 5.98, False, 10, "start"),
     ],
     "singapore": [("Singapore (HQ)", 103.85, 1.29, True, 12, "start")],
     "indonesia": [
-        ("Jakarta", 106.85, -6.20, False, 10, "start"),
+        ("Jakarta", 106.85, -6.20, False, -10, "end"),
+        ("Surabaya", 112.75, -7.25, False, 10, "start"),
         ("Bali", 115.22, -8.65, False, 10, "start"),
     ],
 }
