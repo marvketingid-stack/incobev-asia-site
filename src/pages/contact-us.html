@@ -50,21 +50,63 @@
             <button type="button" class="market-pill" data-market="indonesia" role="tab" aria-selected="false">Indonesia</button>
           </div>
           <div id="market-detail" aria-live="polite">
+            <!-- Each entity shows its logo, address and (where confirmed) a
+                 clickable website below the address (client 5 Oct). Thailand URL
+                 is still TBC so it renders as non-clickable text, not a link. -->
             <div class="market-card rounded-2xl border-l-4 border-primary bg-surface-container-low p-8" data-market="singapore">
-              <h4 class="mb-4 text-headline-md text-on-surface">Singapore</h4>
-              <ul class="space-y-4"><li><p class="font-bold text-on-surface">IncoBev Asia Regional HQ</p><p class="text-sm text-on-surface-variant">402 North Bridge Road, #03-00, Singapore 177822</p></li><li><p class="font-bold text-on-surface">Kaffa Kaldi Pte Ltd</p><p class="text-sm text-on-surface-variant">Henderson Building</p></li><li><p class="font-bold text-on-surface">Suzuki Caf&eacute; &amp; Roastery</p><p class="text-sm text-on-surface-variant">Chin Bee Avenue</p></li></ul>
+              <h4 class="mb-5 text-headline-md text-on-surface">Singapore</h4>
+              <ul class="space-y-6">
+                <li>
+                  <img src="assets/logos/incobev-logo.png" alt="IncoBev Asia" class="mb-2 h-7 w-auto max-w-[150px] object-contain">
+                  <p class="font-bold text-on-surface">IncoBev Asia Regional HQ</p>
+                  <p class="text-sm text-on-surface-variant">402 North Bridge Road, #03-00, Singapore 177822</p>
+                </li>
+                <li>
+                  <img src="assets/logos/kaffa-kaldi.png" alt="Kaffa Kaldi" class="mb-2 h-7 w-auto max-w-[150px] object-contain">
+                  <p class="font-bold text-on-surface">Kaffa Kaldi Pte Ltd</p>
+                  <p class="text-sm text-on-surface-variant">Henderson Building</p>
+                  <a href="https://www.kaffakaldi.com/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary hover:underline">www.kaffakaldi.com <span class="material-symbols-outlined text-[15px]">open_in_new</span></a>
+                </li>
+                <li>
+                  <img src="assets/logos/suzuki.png" alt="Suzuki Coffee" class="mb-2 h-7 w-auto max-w-[130px] object-contain">
+                  <p class="font-bold text-on-surface">Suzuki Caf&eacute; &amp; Roastery</p>
+                  <p class="text-sm text-on-surface-variant">Chin Bee Avenue</p>
+                  <a href="https://www.suzukicoffee.com.sg/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary hover:underline">www.suzukicoffee.com.sg <span class="material-symbols-outlined text-[15px]">open_in_new</span></a>
+                </li>
+              </ul>
             </div>
             <div class="market-card hidden rounded-2xl border-l-4 border-outline-variant bg-surface-container-low p-8" data-market="malaysia">
-              <h4 class="mb-4 text-headline-md text-on-surface">Malaysia</h4>
-              <ul class="space-y-4"><li><p class="font-bold text-on-surface">Kuala Lumpur</p><p class="text-sm text-on-surface-variant">Sales &amp; Technical Office</p></li><li><p class="font-bold text-on-surface">Penang</p><p class="text-sm text-on-surface-variant">Technical Office</p></li><li><p class="font-bold text-on-surface">Kota Kinabalu</p><p class="text-sm text-on-surface-variant">Technical Office</p></li></ul>
+              <h4 class="mb-5 text-headline-md text-on-surface">Malaysia</h4>
+              <ul class="space-y-6">
+                <li>
+                  <img src="assets/logos/suzuki.png" alt="Suzuki Coffee Malaysia" class="mb-2 h-7 w-auto max-w-[130px] object-contain">
+                  <p class="font-bold text-on-surface">Suzuki Coffee Malaysia</p>
+                  <p class="text-sm text-on-surface-variant">Kuala Lumpur &mdash; Sales &amp; Technical Office<br>Penang &mdash; Technical Office<br>Kota Kinabalu &mdash; Technical Office</p>
+                  <a href="https://www.suzukicoffee.com.my/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary hover:underline">www.suzukicoffee.com.my <span class="material-symbols-outlined text-[15px]">open_in_new</span></a>
+                </li>
+              </ul>
             </div>
             <div class="market-card hidden rounded-2xl border-l-4 border-outline-variant bg-surface-container-low p-8" data-market="thailand">
-              <h4 class="mb-4 text-headline-md text-on-surface">Thailand</h4>
-              <ul class="space-y-4"><li><p class="font-bold text-on-surface">Bangkok</p><p class="text-sm text-on-surface-variant">Sales &amp; Technical Office</p></li></ul>
+              <h4 class="mb-5 text-headline-md text-on-surface">Thailand</h4>
+              <ul class="space-y-6">
+                <li>
+                  <img src="assets/logos/incobev-thailand.png" alt="IncoBev Thailand" class="mb-2 h-7 w-auto max-w-[160px] object-contain">
+                  <p class="font-bold text-on-surface">IncoBev Thailand</p>
+                  <p class="text-sm text-on-surface-variant">Bangkok &mdash; Sales &amp; Technical Office</p>
+                  <p class="mt-1 text-sm font-semibold text-outline">Website: TBC</p>
+                </li>
+              </ul>
             </div>
             <div class="market-card hidden rounded-2xl border-l-4 border-outline-variant bg-surface-container-low p-8" data-market="indonesia">
-              <h4 class="mb-4 text-headline-md text-on-surface">Indonesia</h4>
-              <ul class="space-y-4"><li><p class="font-bold text-on-surface">Jakarta</p><p class="text-sm text-on-surface-variant">Sales &amp; Technical Office</p></li><li><p class="font-bold text-on-surface">Bali</p><p class="text-sm text-on-surface-variant">Sales &amp; Technical Office</p></li><li><p class="font-bold text-on-surface">Surabaya</p><p class="text-sm text-on-surface-variant">Technical Office</p></li></ul>
+              <h4 class="mb-5 text-headline-md text-on-surface">Indonesia</h4>
+              <ul class="space-y-6">
+                <li>
+                  <img src="assets/logos/pt-ambrosius.svg" alt="PT Ambrosius Utama" class="mb-2 h-8 w-auto max-w-[150px] object-contain">
+                  <p class="font-bold text-on-surface">PT Ambrosius Utama</p>
+                  <p class="text-sm text-on-surface-variant">Jakarta &mdash; Sales &amp; Technical Office<br>Bali &mdash; Sales &amp; Technical Office<br>Surabaya &mdash; Technical Office</p>
+                  <a href="https://amb-utama.com/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-1 break-all text-sm font-semibold text-primary hover:underline">amb-utama.com <span class="material-symbols-outlined text-[15px]">open_in_new</span></a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

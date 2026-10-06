@@ -163,11 +163,13 @@
   /* ---- Our Brands portfolio filter: chips show one category band or all ---- */
   document.querySelectorAll('[data-brand-filter]').forEach(function (bar) {
     var chips = [].slice.call(bar.querySelectorAll('.brand-chip'));
+    var select = bar.querySelector('select');
     var bands = [].slice.call(document.querySelectorAll('.brand-band'));
     function apply(cat) {
       chips.forEach(function (c) {
         c.setAttribute('aria-pressed', c.getAttribute('data-cat') === cat ? 'true' : 'false');
       });
+      if (select && select.value !== cat) select.value = cat; // keep mobile dropdown in sync
       bands.forEach(function (b) {
         b.classList.toggle('hidden', cat !== 'all' && b.getAttribute('data-cat') !== cat);
       });
@@ -175,6 +177,7 @@
     chips.forEach(function (c) {
       c.addEventListener('click', function () { apply(c.getAttribute('data-cat')); });
     });
+    if (select) select.addEventListener('change', function () { apply(select.value); });
   });
 
   /* ---- Interactive regional map (Contact): click a country / pill to reveal one market ---- */

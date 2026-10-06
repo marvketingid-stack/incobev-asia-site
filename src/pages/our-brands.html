@@ -31,16 +31,30 @@
         <p class="text-body-md text-on-surface-variant">A curated selection of leading international and regional brands, distributed and supported by IncoBev Asia across Southeast Asia.</p>
       </div>
 
-      <!-- Filter bar: jump to one category or view all (client 28 Sep, slide 10 —
-           Option B editorial bands with an Option A filter on top). -->
-      <div class="mb-10 flex flex-wrap gap-2 md:gap-3" data-brand-filter role="group" aria-label="Filter brands by category">
-        <button type="button" class="brand-chip" data-cat="all" aria-pressed="true"><span class="material-symbols-outlined">apps</span> All</button>
-        <button type="button" class="brand-chip" data-cat="machines" aria-pressed="false"><span class="material-symbols-outlined">coffee_maker</span> Coffee Machines</button>
-        <button type="button" class="brand-chip" data-cat="coffee" aria-pressed="false"><span class="material-symbols-outlined">local_cafe</span> Coffee</button>
-        <button type="button" class="brand-chip" data-cat="tea" aria-pressed="false"><span class="material-symbols-outlined">emoji_food_beverage</span> Tea</button>
-        <button type="button" class="brand-chip" data-cat="mixes" aria-pressed="false"><span class="material-symbols-outlined">blender</span> Mixes &amp; Syrups</button>
-        <button type="button" class="brand-chip" data-cat="tools" aria-pressed="false"><span class="material-symbols-outlined">cleaning_services</span> Barista Tools</button>
-        <button type="button" class="brand-chip" data-cat="others" aria-pressed="false"><span class="material-symbols-outlined">category</span> Others</button>
+      <!-- Filter: jump to one category or view all (client 28 Sep slide 10 —
+           editorial bands + filter; client 5 Oct — mobile uses a dropdown
+           instead of wrapping pills; desktop/tablet keep the pill row). -->
+      <div class="mb-10" data-brand-filter role="group" aria-label="Filter brands by category">
+        <!-- Mobile: dropdown select -->
+        <select id="brand-select" aria-label="Filter brands by category" class="w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 text-label-sm font-semibold text-on-surface transition-all focus:ring-2 focus:ring-primary md:hidden">
+          <option value="all">All Brands</option>
+          <option value="machines">Coffee Machines</option>
+          <option value="coffee">Coffee</option>
+          <option value="tea">Tea</option>
+          <option value="mixes">Mixes &amp; Syrups</option>
+          <option value="tools">Barista Tools</option>
+          <option value="others">Others</option>
+        </select>
+        <!-- Tablet/desktop: pill row -->
+        <div class="hidden flex-wrap gap-2 md:flex md:gap-3">
+          <button type="button" class="brand-chip" data-cat="all" aria-pressed="true"><span class="material-symbols-outlined">apps</span> All</button>
+          <button type="button" class="brand-chip" data-cat="machines" aria-pressed="false"><span class="material-symbols-outlined">coffee_maker</span> Coffee Machines</button>
+          <button type="button" class="brand-chip" data-cat="coffee" aria-pressed="false"><span class="material-symbols-outlined">local_cafe</span> Coffee</button>
+          <button type="button" class="brand-chip" data-cat="tea" aria-pressed="false"><span class="material-symbols-outlined">emoji_food_beverage</span> Tea</button>
+          <button type="button" class="brand-chip" data-cat="mixes" aria-pressed="false"><span class="material-symbols-outlined">blender</span> Mixes &amp; Syrups</button>
+          <button type="button" class="brand-chip" data-cat="tools" aria-pressed="false"><span class="material-symbols-outlined">cleaning_services</span> Barista Tools</button>
+          <button type="button" class="brand-chip" data-cat="others" aria-pressed="false"><span class="material-symbols-outlined">category</span> Others</button>
+        </div>
       </div>
 
       <!-- Editorial category bands: each has a titled label column + logo row. -->
