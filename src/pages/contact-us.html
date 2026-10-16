@@ -148,8 +148,13 @@
               <h2 class="mb-4 text-headline-lg">Submit a Request</h2>
               <p class="text-on-surface-variant">Fill out the form below and our regional leads will be in touch.</p>
             </div>
-            <!-- Honest, non-faked form. data-configured="false" until a real endpoint is wired (see assets/js/contact.js). -->
-            <form id="contact-form-el" class="space-y-8" method="post" data-configured="false" data-endpoint="">
+            <!-- Posts to the Cloudflare Pages Function at /api/contact (M365 SMTP relay). -->
+            <form id="contact-form-el" class="space-y-8" method="post" data-configured="true" data-endpoint="/api/contact">
+              <!-- Honeypot: hidden from people; bots that fill it are silently dropped. -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+                <label for="cf-company-website">Company Website</label>
+                <input id="cf-company-website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+              </div>
               <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div class="space-y-3">
                   <label for="cf-name" class="text-label-sm font-semibold text-on-surface-variant">Full Name</label>
