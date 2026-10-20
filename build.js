@@ -8,6 +8,18 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
+const sanitizeHtml = require('sanitize-html');
+
+// Sanitise CMS-authored article HTML (defence against stored XSS — strips
+// <script>, on* handlers, iframes, javascript: URLs, etc.).
+function cleanHtml(html) {
+  return sanitizeHtml(html, {
+    allowedTags: ['p', 'br', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'a', 'strong', 'em', 'b', 'i', 'blockquote', 'img', 'hr', 'code', 'pre'],
+    allowedAttributes: { a: ['href', 'title', 'target', 'rel'], img: ['src', 'alt'] },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    transformTags: { a: sanitizeHtml.simpleTransform('a', { rel: 'noopener noreferrer' }) },
+  });
+}
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
@@ -44,7 +56,7 @@ function loadHighlights() {
         excerpt: data.excerpt || '',
         image: String(data.image || '').replace(/^\//, ''),
         featured: !!data.featured,
-        body: marked.parse(String(content).trim()),
+        body: cleanHtml(marked.parse(String(content).trim())),
       };
     });
   // Newest first, then pin the featured article to the top (the big card).

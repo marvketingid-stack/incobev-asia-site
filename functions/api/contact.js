@@ -16,7 +16,19 @@ const json = (obj, status = 200) =>
 const esc = (s) =>
   String(s).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
 
+const ALLOWED_ORIGINS = [
+  'https://www.incobev.asia',
+  'https://incobev.asia',
+  'https://incobev-asia-site.pages.dev',
+];
+
 export async function onRequestPost({ request, env }) {
+  // Only accept same-site form posts (reduces cross-site spam/abuse).
+  const origin = request.headers.get('origin') || '';
+  if (origin && ALLOWED_ORIGINS.indexOf(origin) === -1) {
+    return json({ ok: false, error: 'forbidden' }, 403);
+  }
+
   let form;
   try {
     form = await request.formData();
@@ -24,18 +36,18 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, error: 'bad_request' }, 400);
   }
 
-  const get = (k) => String(form.get(k) || '').trim();
-  const name = get('name');
-  const email = get('email');
-  const type = get('inquiry_type');
-  const hub = get('hub');
-  const message = get('message');
-  const honey = get('company_website'); // honeypot — real users leave this blank
+  // Strip CR/LF (header-injection) and cap length on header-bound fields.
+  const clean = (k, max) => String(form.get(k) || '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
+  const name = clean('name', 120);
+  const email = clean('email', 160);
+  const type = clean('inquiry_type', 80);
+  const hub = clean('hub', 80);
+  const message = String(form.get('message') || '').trim().slice(0, 5000); // newlines kept for the body
+  const honey = String(form.get('company_website') || '').trim(); // honeypot — real users leave this blank
 
   if (honey) return json({ ok: true }); // silently accept, drop bots
   if (!name || !email || !message) return json({ ok: false, error: 'missing_fields' }, 400);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return json({ ok: false, error: 'bad_email' }, 400);
-  if (message.length > 5000) return json({ ok: false, error: 'too_long' }, 400);
 
   if (!env.SMTP_USER || !env.SMTP_PASS) return json({ ok: false, error: 'not_configured' }, 503);
 
