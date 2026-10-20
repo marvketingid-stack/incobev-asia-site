@@ -1,65 +1,38 @@
-# Company Highlights — How to publish an article (self-serve)
+# How to publish a Company Highlights article
 
-All Company Highlights articles are generated from **one file**:
+For the marketing team. No coding needed — everything is done in the dashboard.
 
-```
-src/data/highlights.js
-```
+## Open the editor
+1. Go to **https://incobev.asia/admin**
+2. Log in with your email (you'll be invited once).
 
-Editing that file and re-deploying updates the listing page **and** creates each
-article's own page automatically. No page needs to be hand-built.
+## Add a new article
+1. Click **Company Highlights** → **Create New**.
+2. Fill in the fields:
+   - **Title** — the headline.
+   - **Category** — pick one (Events, Awards, Partnerships, Community, Milestones, News).
+   - **Date** — the article date (used to order the list; newest shows first).
+   - **Short summary** — 1–2 lines shown on the card.
+   - **Thumbnail / header image** — upload a photo (JPG/PNG).
+   - **Featured** — turn ON if you want this to be the big article at the top
+     (only turn it on for one article at a time).
+   - **Article body** — write the full article. You can use headings, bold,
+     lists and links from the toolbar.
+3. Use the **preview** to see how it looks.
+4. Click **Save**.
 
----
+## It goes live automatically
+After you save, the website updates itself in about **1–2 minutes**. Refresh
+**incobev.asia/company-highlights** to see it.
 
-## 1. Where the content lives
-`src/data/highlights.js` is a list of articles. Each article is one block:
+## Edit or remove an article
+- **Edit:** open Company Highlights → click the article → change → **Save**.
+- **Remove:** open the article → **Delete** (top-right menu).
 
-```js
-{
-  slug: 'incobev-asia-at-fha-2026',      // URL id — letters/numbers/hyphens, must be unique
-  category: 'Events',                     // small tag on the card (Events, Awards, Partnerships, Community, Milestones, News…)
-  date: '8 Apr 2026',                     // shown next to the tag
-  title: 'IncoBev Asia at FHA 2026',
-  excerpt: 'One or two lines shown on the card.',
-  image: 'assets/images/group-product.jpg', // thumbnail (see step 3)
-  body: '<p>First paragraph…</p><p>Second paragraph…</p>', // the article text
-},
-```
+## Tips
+- Keep the summary short — it's just the teaser on the card.
+- Use a clear, good-quality image (landscape works best).
+- Only one article should be **Featured** at a time.
+- If an image looks too big, any landscape photo around 1200px wide is ideal.
 
-The **first article in the list is the big featured one** on the left. New
-articles are normally added at the **top** so the newest is featured.
-
-## 2. How to add a new article
-1. Open `src/data/highlights.js`.
-2. Copy an existing block and paste it at the **top** of the list.
-3. Change `slug`, `category`, `date`, `title`, `excerpt`, `image`, and `body`.
-4. Save.
-
-## 3. How to add / change the thumbnail
-1. Put the image file into `assets/images/` (JPG or PNG, ideally ~1200px wide).
-2. Set `image:` to `'assets/images/your-file.jpg'`.
-
-## 4. How to set the title / excerpt / content
-- `title` — the headline.
-- `excerpt` — the short summary on the card.
-- `body` — the full article, written as simple HTML paragraphs:
-  `'<p>Paragraph one.</p><p>Paragraph two.</p>'`
-
-## 5. How to publish (deploy)
-From the project folder:
-
-```bash
-npm run build
-git add -A
-git commit -m "Add highlight: <article title>"
-git push
-```
-
-Cloudflare Pages rebuilds automatically on push, and the article goes live at
-`highlight-<slug>.html` (e.g. `/highlight-incobev-asia-at-fha-2026`). It also
-appears on the Company Highlights listing page and in "More Highlights" on other
-articles.
-
-> Tip: to **remove** an article, delete its block from `src/data/highlights.js`
-> and redeploy. To **reorder / change which one is featured**, move blocks up or
-> down (top = featured).
+Need help? WhatsApp the team and we'll sort it out.
