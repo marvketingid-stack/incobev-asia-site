@@ -6,13 +6,48 @@
  */
 const fs = require('fs');
 const path = require('path');
-const highlights = require('./src/data/highlights.js');
+const matter = require('gray-matter');
+const { marked } = require('marked');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
 
 const read = (p) => fs.readFileSync(p, 'utf8');
+
+// --- Company Highlights content: one Markdown file per article in
+//     content/highlights/. Edited through TinaCMS (/admin) or by hand. ---
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function fmtDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
+  return m ? `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}` : String(iso || '');
+}
+function loadHighlights() {
+  const dir = path.join(ROOT, 'content', 'highlights');
+  if (!fs.existsSync(dir)) return [];
+  const items = fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => {
+      const { data, content } = matter(read(path.join(dir, f)));
+      return {
+        slug: f.replace(/\.md$/, ''),
+        category: data.category || 'News',
+        dateISO: data.date || '',
+        date: fmtDate(data.date),
+        title: data.title || f.replace(/\.md$/, ''),
+        excerpt: data.excerpt || '',
+        image: String(data.image || '').replace(/^\//, ''),
+        featured: !!data.featured,
+        body: marked.parse(String(content).trim()),
+      };
+    });
+  // Newest first, then pin the featured article to the top (the big card).
+  items.sort((a, b) => (b.dateISO > a.dateISO ? 1 : b.dateISO < a.dateISO ? -1 : 0));
+  const feat = items.find((i) => i.featured) || items[0];
+  return feat ? [feat, ...items.filter((i) => i !== feat)] : items;
+}
+const highlights = loadHighlights();
 
 const partials = {
   head: read(path.join(SRC, 'partials', 'head.html')),
