@@ -76,6 +76,30 @@
     @apply border-primary bg-primary text-on-primary shadow-sm hover:text-on-primary;
   }
 
+  /* Article body (Company Highlights detail) — rendered from Markdown via the
+     CMS, so headings/links/lists/images need real styling (Tailwind resets them). */
+  .prose-incobev h2 {
+    @apply !mt-10 text-headline-md font-bold text-on-surface;
+  }
+  .prose-incobev h3 {
+    @apply !mt-7 text-xl font-bold text-on-surface;
+  }
+  .prose-incobev a {
+    @apply font-semibold text-primary underline;
+  }
+  .prose-incobev strong {
+    @apply font-bold text-on-surface;
+  }
+  .prose-incobev ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+  .prose-incobev ol {
+    @apply list-decimal space-y-2 pl-6;
+  }
+  .prose-incobev img {
+    @apply w-full rounded-2xl;
+  }
+
   /* Interactive regional map (Contact) */
   .market-pill {
     @apply rounded-full border border-outline-variant bg-surface-container-lowest px-4 py-2 text-label-sm font-bold text-on-surface-variant transition-all hover:border-primary/50 hover:text-primary;

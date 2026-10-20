@@ -18,9 +18,14 @@ const read = (p) => fs.readFileSync(p, 'utf8');
 // --- Company Highlights content: one Markdown file per article in
 //     content/highlights/. Edited through TinaCMS (/admin) or by hand. ---
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-function fmtDate(iso) {
-  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ''));
-  return m ? `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}` : String(iso || '');
+function toISO(v) {
+  // YAML parses an unquoted ISO timestamp (what TinaCMS writes) into a Date.
+  if (v instanceof Date) return v.toISOString();
+  return String(v || '');
+}
+function fmtDate(v) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(toISO(v));
+  return m ? `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}` : toISO(v);
 }
 function loadHighlights() {
   const dir = path.join(ROOT, 'content', 'highlights');
@@ -33,7 +38,7 @@ function loadHighlights() {
       return {
         slug: f.replace(/\.md$/, ''),
         category: data.category || 'News',
-        dateISO: data.date || '',
+        dateISO: toISO(data.date),
         date: fmtDate(data.date),
         title: data.title || f.replace(/\.md$/, ''),
         excerpt: data.excerpt || '',
