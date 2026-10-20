@@ -233,3 +233,41 @@
 body.nav-open {
   overflow: hidden;
 }
+
+/* Cookie consent banner (raw CSS so attribute toggling isn't purged) */
+.cookie-consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #003861;
+  color: #eaf2fb;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+}
+.cookie-consent[hidden] { display: none; }
+.cookie-consent__text { margin: 0; flex: 1 1 240px; font-size: 13px; line-height: 1.4; }
+.cookie-consent__btns { display: flex; gap: 8px; }
+.cookie-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 8px 18px;
+  border: 1px solid transparent;
+  transition: filter 0.15s ease, background 0.15s ease;
+}
+.cookie-btn--primary { background: #9ecaff; color: #003861; }
+.cookie-btn--primary:hover { filter: brightness(1.08); }
+.cookie-btn--ghost { background: transparent; color: #eaf2fb; border-color: rgba(158, 202, 255, 0.4); }
+.cookie-btn--ghost:hover { background: rgba(158, 202, 255, 0.12); }

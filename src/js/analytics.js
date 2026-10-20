@@ -76,9 +76,29 @@
       });
     });
   }
+  // ---- Cookie consent banner (GA4 Consent Mode) ----
+  function wireConsent() {
+    var banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+    var stored = null;
+    try { stored = localStorage.getItem('ib-consent'); } catch (e) {}
+    if (!stored) banner.hidden = false; // show until a choice is made
+    function choose(v) {
+      try { localStorage.setItem('ib-consent', v); } catch (e) {}
+      var g = ga();
+      if (v === 'granted' && g) g('consent', 'update', { analytics_storage: 'granted' });
+      banner.hidden = true;
+    }
+    var accept = document.getElementById('cookie-accept');
+    var decline = document.getElementById('cookie-decline');
+    if (accept) accept.addEventListener('click', function () { choose('granted'); });
+    if (decline) decline.addEventListener('click', function () { choose('denied'); });
+  }
+
+  function init() { wireForm(); wireConsent(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wireForm);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    wireForm();
+    init();
   }
 })();

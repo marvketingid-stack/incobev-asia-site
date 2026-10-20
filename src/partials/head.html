@@ -8,6 +8,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Consent Mode v2 — analytics stays off until the visitor accepts.
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied' });
+    try { if (localStorage.getItem('ib-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
     gtag('config', 'G-RTP2DZGWBQ');
   </script>
   <!-- Favicon (IncoBev sphere mark) -->
